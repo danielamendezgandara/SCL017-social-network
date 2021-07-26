@@ -10,16 +10,16 @@
 }
 
 .logo {
-    width:230px;
-    height:330px;
-    margin-left: 210px;
-    margin-top:50px;
+    width:200px;
+    height:300px;
+    margin-left: 220px;
+    margin-top:60px;
     grid-column-start: 1;
 }
 
 .img-logo{
-    width: 230px;
-    height: 330px;
+    width: 200px;
+    height: 300px;
 }
 
 .text {
@@ -35,15 +35,15 @@
 .input-style{
     grid-column-start: 2;
     margin-right: 50px;
-    margin-top:100px;
+    margin-top:60px;
+    margin-bottom:0px;
 }
+
 input{
     width: 300px;
     margin-top : 35px;
     outline:none;
 }
-
-
 
 .btn{
     width:200px;
@@ -55,14 +55,17 @@ input{
 .register-grid{
   grid-auto-flow:column;
 }
+
 .register{
     margin-right: 50px;
     height: 100px;
+    margin-top:0px;
 }
 
 h2{
   font-size: 20px;
 }
+
 .btn-2{
     font-size:20px;
     cursor: pointer;
@@ -80,13 +83,16 @@ h2{
     left:450px;
     top: 100px;
 }
+
 .modal-content{
     margin-left:35px;
 }
+
 h3{
     margin-right: 30px;
     font-size:25px;
 }
+
 #btn-3 {
     margin: 10px 0px 0px 70px;
 }
