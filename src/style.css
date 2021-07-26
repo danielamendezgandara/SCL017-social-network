@@ -39,7 +39,7 @@ input {
     background-image: url(img/mail.png);
     background-repeat: no-repeat;
     background-position: 10px;
-    background-size: 5%;    
+    background-size: 3%;    
 }
 #password::placeholder {
     background-image: url(img/password.png);
