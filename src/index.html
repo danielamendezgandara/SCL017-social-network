@@ -49,7 +49,7 @@
       <h3>Crear nueva cuenta</h3>
       <form id="formAccCreation">
         <input
-          type="text"
+          type="email"
           id="mail-creation"
           placeholder=" "
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -74,13 +74,32 @@
 
       <div class="social-2">
         <img src="img/twitter2.png">
-        <img src="img/google2.png">
+        <img id="google" src="img/google2.png">
         <img src="img/facebook2.png">
       </div>
     </div>
   </div>
 
   <script type="module" src="main.js"></script>
-  
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBpeFRwauY0f7zPuSB_EvSIdg09gPU2uI4",
+    authDomain: "scl017-socialnetworkmovietalk.firebaseapp.com",
+    projectId: "scl017-socialnetworkmovietalk",
+    storageBucket: "scl017-socialnetworkmovietalk.appspot.com",
+    messagingSenderId: "235332975851",
+    appId: "1:235332975851:web:1f24c8818c077ee2ab12ae"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script> 
 </body>
 </html>

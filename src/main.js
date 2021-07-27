@@ -1,8 +1,5 @@
-// Este es el punto de entrada de tu aplicacion
+import {signUpUserEmailPassword,signUpUserGoogle } from './lib/controller/registerFirebase.js';
 
-import { myFunction } from './lib/index.js';
-
-// myFunction();
 
 // Get Modal
 const modal = document.getElementById("myModal");
@@ -12,6 +9,12 @@ const btn = document.getElementById("btn-2");
 
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
+
+//Registro de usuario 
+const btnRegister=document.getElementById("btn-3");
+const emailUser=document.getElementById("mail-creation");
+const passwordUser=document.getElementById("pass-creation");
+const accountGoogle=document.getElementById("google");
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
@@ -24,8 +27,16 @@ span.onclick = function () {
 };
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
+/*window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-};
+};*/
+
+btnRegister.addEventListener('click',function(){
+  signUpUserEmailPassword(emailUser,passwordUser);
+  emailUser.value='';
+  passwordUser.value='';
+});
+
+accountGoogle.addEventListener('click',signUpUserGoogle,false);
