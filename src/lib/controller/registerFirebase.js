@@ -16,7 +16,6 @@ const signUpUserEmailPassword=(userEmail,userPassword)=>{
   userPassword.value='';
   console.log(errorCode,errorMessage);
 });
- 
 }
 
 //Autenticación con google
@@ -31,7 +30,6 @@ firebase.auth()
   var token = credential.accessToken;
   // The signed-in user info.
   var user = result.user;
-  // ...
 }).catch((error) => {
   // Handle Errors here.
   var errorCode = error.code;
@@ -40,8 +38,32 @@ firebase.auth()
   var email = error.email;
   // The firebase.auth.AuthCredential type that was used.
   var credential = error.credential;
-  // ...
 });
+}
+
+//Autenticación con Facebook 
+var providerFacebook = new firebase.auth.FacebookAuthProvider();
+const signUpUserFacebook=()=>{
+  firebase
+  .auth()
+  .signInWithPopup(providerFacebook)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+    // The signed-in user info.
+    var user = result.user;
+    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    var accessToken = credential.accessToken;
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+  });
 }
 
 //Observador para verificar usuario
@@ -67,10 +89,9 @@ firebase.auth().currentUser.sendEmailVerification()
 .then(() => {
   console.log('Correo de verificación enviado');
 });
-
 }
 
 observeUser();
 
-export {signUpUserEmailPassword,signUpUserGoogle};
+export {signUpUserEmailPassword,signUpUserGoogle,signUpUserFacebook,observeUser};
 
