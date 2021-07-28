@@ -11,7 +11,7 @@ const btn = document.getElementById("btn-2");
 // Get the <span> element that closes the modal
 const span = document.getElementsByClassName("close")[0];
 
-//Registro de usuario 
+//User register
 const btnRegister=document.getElementById("btn-3");
 const emailUser=document.getElementById("mail-creation");
 const passwordUser=document.getElementById("pass-creation");
@@ -26,13 +26,6 @@ btn.onclick = function () {
 span.onclick = function () {
   modal.style.display = "none";
 };
-
-// When the user clicks anywhere outside of the modal, close it
-/*window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};*/
 
 btnRegister.addEventListener('click',function(){
   signUpUserEmailPassword(emailUser,passwordUser);
