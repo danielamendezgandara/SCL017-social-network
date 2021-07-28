@@ -1,4 +1,4 @@
-import {signUpUserEmailPassword,signUpUserGoogle } from '../controller/registerFirebase.js';
+import {signUpUserEmailPassword,signUpUserGoogle } from './lib/controller/registerFirebase.js';
 
 
 // Get Modal
