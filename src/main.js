@@ -1,6 +1,7 @@
+import register from './lib/views/login.js';
 import {signUpUserEmailPassword,signUpUserGoogle } from './lib/controller/registerFirebase.js';
 
-
+document.getElementById("root").appendChild(register());
 // Get Modal
 const modal = document.getElementById("myModal");
 
