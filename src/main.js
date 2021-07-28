@@ -1,5 +1,6 @@
 import register from './lib/views/login.js';
 import {signUpUserEmailPassword,signUpUserGoogle } from './lib/controller/registerFirebase.js';
+import {} from './lib/controller/loginFirebase.js';
 
 document.getElementById("root").appendChild(register());
 // Get Modal
@@ -16,6 +17,9 @@ const btnRegister=document.getElementById("btn-3");
 const emailUser=document.getElementById("mail-creation");
 const passwordUser=document.getElementById("pass-creation");
 const accountGoogle=document.getElementById("google");
+
+//user login 
+
 
 // When the user clicks the button, open the modal
 btn.onclick = function () {
