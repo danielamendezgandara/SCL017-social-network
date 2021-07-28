@@ -1,3 +1,4 @@
+//creación de usuario
 const signUpUserEmailPassword=(userEmail,userPassword)=>{
   let email=document.getElementById("mail-creation").value;
   let password=document.getElementById("pass-creation").value;
@@ -18,6 +19,7 @@ const signUpUserEmailPassword=(userEmail,userPassword)=>{
  
 }
 
+//Autenticación con google
 var provider = new firebase.auth.GoogleAuthProvider();
 const signUpUserGoogle=()=>{
 firebase.auth()
@@ -43,6 +45,7 @@ firebase.auth()
 });
 }
 
+//Observador para verificar usuario
 const observeUser=()=>{
 firebase.auth().onAuthStateChanged((user) => {
    if (user) { 
@@ -59,6 +62,7 @@ firebase.auth().onAuthStateChanged((user) => {
  });
 }
 
+//Correo de verificación
 const verifyUser=()=>{
 firebase.auth().currentUser.sendEmailVerification()
 .then(() => {
