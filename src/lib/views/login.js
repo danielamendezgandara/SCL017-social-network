@@ -25,7 +25,6 @@ const register = ()=>{
   </div>
 
   <div class="social">
-    <img id="twiter-register" src="img/twitter.png">
     <img id="google-register" src="img/google.png">
     <img id="facebook-register" src="img/facebok.png">
   </div>
@@ -63,7 +62,6 @@ const register = ()=>{
     </form>
 
     <div class="social-2">
-      <img id="twitter" src="img/twitter2.png">
       <img id="google" src="img/google2.png">
       <img id="facebook" src="img/facebook2.png">
     </div>
