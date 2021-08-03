@@ -1,6 +1,6 @@
 export default {
     "pelicula": [{
-      "name": "Fear Streer Part Three: 1666",
+      "name": "Fear Street Part Three: 1666",
       "gender": "Terror",
       "year": "2021",
       "synopsis": "Remontada a 1666, Deena descubre la verdad sobre Sarah Fier. En 1994, los amigos luchan por sus vidas y el futuro de Shadyside",
