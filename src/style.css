@@ -152,3 +152,47 @@ h3 {
       opacity: 1;
     }
   }
+  .carousel{
+    width: 50%;
+    margin: auto;
+    overflow: hidden;
+   }
+   
+   .carousel ul {
+     display: flex;
+     padding: 0;
+     width:500%;
+     animation: change 10s infinite alternate;
+   }
+   
+   .carousel li{
+    list-style:none;
+    width:100%;
+   }
+   
+   .carousel img{
+     width:100%;
+     height:90%;
+     border-radius: 10px;
+   }
+   
+   @keyframes change{
+     0%{margin-left:-0%;}
+     10%{margin-left:-0%;}
+     20%{margin-left:-100%;}
+     30%{margin-left:-100%;}
+     40%{margin-left:-200%;}
+     50%{margin-left:-200%;}
+     60%{margin-left:-300%;}
+     70%{margin-left:-300%;}
+     80%{margin-left:-400%;}
+     100%{margin-left:-400%;}
+   }
+   
+   .carousel img:hover
+   {
+   -webkit-transform: scale(1.3);
+   -ms-transform: scale(1.3);
+   transform: scale(1.3);
+   cursor: pointer;
+   }
