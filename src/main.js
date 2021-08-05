@@ -1,34 +1,44 @@
-import register from './lib/views/login.js';
-import {signUpUserEmailPassword,signUpUserGoogle, signUpUserFacebook } from './lib/controller/registerFirebase.js';
-import loginUserEmailPassword from './lib/controller/loginFirebase.js';
+import register from './lib/views/register.js';
+/*import {signUpUserEmailPassword,signUpUserGoogle, signUpUserFacebook } from './lib/controllers/registerFirebase.js';*/
+//import {signUpUserGoogle, signUpUserFacebook } from './lib/controllers/registerFirebase.js';
+//import signUpUserEmailPassword from './lib/controllers/register-controller.js';
+//import loginUserEmailPassword from './lib/controllers/loginFirebase.js';
+import {changePath, changeView } from './lib/controllers/route.js';
+//import signInUserEmailPassword from './lib/controllers/login-controller.js';
 
+
+
+
+window.addEventListener('hashchange',()=>changeView(window.location.hash));
+window.addEventListener('popstate',()=>changePath(window.location.pathname));
 document.getElementById("root").appendChild(register());
+//const btnLogin= document.getElementById("btn")
+//const accountGoogleRegister=document.getElementById("google-register")
+//const accountFacebookRegister=document.getElementById("facebook-register")
 
-const btnLogin= document.getElementById("btn")
-const accountGoogleRegister=document.getElementById("google-register")
-const accountFacebookRegister=document.getElementById("facebook-register")
 
 
-btnLogin.addEventListener('click',loginUserEmailPassword,false);
-accountGoogleRegister.addEventListener('click',signUpUserGoogle,false);
-accountFacebookRegister.addEventListener('click',signUpUserFacebook,false);
+//btnLogin.addEventListener('click',loginUserEmailPassword,false);
+//btnLogin.addEventListener('click',signInUserEmailPassword,false);
+//accountGoogleRegister.addEventListener('click',signUpUserGoogle,false);
+//accountFacebookRegister.addEventListener('click',signUpUserFacebook,false);
 
 
 
 // Get Modal
-const modal = document.getElementById("myModal");
+/*const modal = document.getElementById("myModal");
 // Get the button that opens the modal
 const btn = document.getElementById("btn-2");
 // Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+const span = document.getElementsByClassName("close")[0];*/
 //User register
-const btnRegister=document.getElementById("btn-3");
-const emailUser=document.getElementById("mail-creation");
-const passwordUser=document.getElementById("pass-creation");
-const accountGoogle=document.getElementById("google");
-const accountFacebook=document.getElementById("facebook")
+//const btnRegister=document.getElementById("btn-3");
+/*const emailUser=document.getElementById("mail-creation");
+const passwordUser=document.getElementById("pass-creation");*/
+/*const accountGoogle=document.getElementById("google");
+const accountFacebook=document.getElementById("facebook")*/
 // When the user clicks the button, open the modal
-btn.onclick = function () {
+/*btn.onclick = function () {
   modal.style.display = "block";
 };
 // When the user clicks on <span> (x), close the modal
@@ -36,11 +46,11 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 btnRegister.addEventListener('click',function(){
-  signUpUserEmailPassword(emailUser,passwordUser);
+  signUpUserEmailPassword();
   emailUser.value='';
   passwordUser.value='';
-});
+});*/
 
-accountGoogle.addEventListener('click',signUpUserGoogle,false);
-accountFacebook.addEventListener('click',signUpUserFacebook,false);
+//accountGoogle.addEventListener('click',signUpUserGoogle,false);
+//accountFacebook.addEventListener('click',signUpUserFacebook,false);
 

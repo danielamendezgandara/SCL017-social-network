@@ -1,4 +1,4 @@
-const loginUserEmailPassword=()=>{
+/*const loginUserEmailPassword=()=>{
     let email=document.getElementById("email").value;
     let password=document.getElementById("password").value;
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -12,4 +12,4 @@ const loginUserEmailPassword=()=>{
     });
 }
 
-export default loginUserEmailPassword;
+export default loginUserEmailPassword;*/

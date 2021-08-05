@@ -1,4 +1,4 @@
-import components from "../views/Components.js";
+import components from "../views/components.js";
 
 const page=document.getElementById('root');
 
@@ -10,6 +10,10 @@ const changeRoute=(route)=>{
 export const changePath=(path)=>{
     const view=path.replace('/','#');
     page.innerHTML='';
+    /*onAuthStateChange
+    /*if(user){
+       window.location.hash=''
+    }*/
     page.appendChild(components[view]);
 
  }
