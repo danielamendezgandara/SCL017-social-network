@@ -1,4 +1,4 @@
-import register from './lib/views/Register.js';
+import register from './lib/views/register.js';
 /*import {signUpUserEmailPassword,signUpUserGoogle, signUpUserFacebook } from './lib/controllers/registerFirebase.js';*/
 //import {signUpUserGoogle, signUpUserFacebook } from './lib/controllers/registerFirebase.js';
 //import signUpUserEmailPassword from './lib/controllers/register-controller.js';
