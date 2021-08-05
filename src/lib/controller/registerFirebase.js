@@ -1,11 +1,12 @@
 //creación de usuario
-const signUpUserEmailPassword=(userEmail,userPassword)=>{
+/*const signUpUserEmailPassword=(userEmail,userPassword)=>{
   let email=document.getElementById("mail-creation").value;
   let password=document.getElementById("pass-creation").value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
  .then((userCredential) => {
   verifyUser();
-  const user = userCredential.user;
+  window.location.hash='#home';
+  const user = userCredential;
   document.getElementById("myModal").style.display='none';
   console.log(user);
   })
@@ -16,7 +17,7 @@ const signUpUserEmailPassword=(userEmail,userPassword)=>{
   userPassword.value='';
   console.log(errorCode,errorMessage);
 });
-}
+}*/
 
 //Autenticación con google
 var provider = new firebase.auth.GoogleAuthProvider();
@@ -30,6 +31,7 @@ firebase.auth()
   var token = credential.accessToken;
   // The signed-in user info.
   var user = result.user;
+  console.log(result);
 }).catch((error) => {
   // Handle Errors here.
   var errorCode = error.code;
@@ -76,6 +78,7 @@ firebase.auth().onAuthStateChanged((user) => {
      const emailVerified = user.emailVerified; 
      const uid = user.uid;
     console.log(emailVerified);
+    console.log(email);
     console.log('Existe un usuario activo');
    } else {
      console.log('No existe un usuario activo');
@@ -83,6 +86,8 @@ firebase.auth().onAuthStateChanged((user) => {
  });
 }
 
+const userito = firebase.auth().currentUser;
+console.log(userito);
 //Correo de verificación
 const verifyUser=()=>{
 firebase.auth().currentUser.sendEmailVerification()
@@ -93,5 +98,4 @@ firebase.auth().currentUser.sendEmailVerification()
 
 observeUser();
 
-export {signUpUserEmailPassword,signUpUserGoogle,signUpUserFacebook,observeUser};
-
+export {signUpUserGoogle,signUpUserFacebook,observeUser};

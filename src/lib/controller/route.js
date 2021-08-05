@@ -10,6 +10,10 @@ const changeRoute=(route)=>{
 export const changePath=(path)=>{
     const view=path.replace('/','#');
     page.innerHTML='';
+    /*onAuthStateChange
+    /*if(user){
+       window.location.hash=''
+    }*/
     page.appendChild(components[view]);
 
  }
