@@ -1,4 +1,4 @@
-// Registro de usuario y inicio de sesión de usuario mediante email y contraseña
+// Registro de usuario e inicio de sesión de usuario mediante email y contraseña
 
 const objErrorMessage = {
     'auth/invalid-email':'La dirección de correo electrónico no es valida.',
