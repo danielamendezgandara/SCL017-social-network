@@ -10,7 +10,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/530299",
       "cuevana":"https://cuevana3.io/46092/fear-street-1666",
       "netflix":"https://bit.ly/3A8JuDr",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Blood Red Sky",
@@ -23,7 +23,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/187415",
       "cuevana":"https://cuevana3.io/46341/blood-red-sky",
       "netflix":"https://bit.ly/3jfJA5p",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "La mano del demonio",
@@ -36,7 +36,7 @@ export default {
       "spoilers":"",
       "cuevana":"https://cuevana3.io/46412/pobochnyi-effekt",
       "netflix":"",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Oxygen",
@@ -49,7 +49,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/780912",
       "cuevana":"https://cuevana3.io/42721/oxygene",
       "netflix":"https://bit.ly/3rNn73e",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Girl Next",
@@ -62,7 +62,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/791315",
       "cuevana":"https://cuevana3.io/45726/girl-next",
       "netflix":"",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "The Paramedic",
@@ -75,7 +75,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/707973",
       "cuevana":"https://cuevana3.io/32937/irremediable",
       "netflix":"https://bit.ly/3A5wi28",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Jolt",
@@ -88,7 +88,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/800829",
       "cuevana": "https://cuevana3.io/46321/jolt",
       "netflix":"",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Black Widow",
@@ -101,7 +101,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/723455",
       "cuevana":"https://cuevana3.io/45691/black-widow",
       "netflix":"",
-      "disney":"https://www.disneyplus.com/es-419/movies/black-widow/58cDnZ1oCzHS",
+      "disney":"https://www.disneyplus.com/es-419/movies/black-widow/58cDnZ1oCzHS"
     },
     {
       "name": "AVA",
@@ -114,7 +114,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/708172",
       "cuevana":"https://cuevana3.io/32274/ava",
       "netflix":"https://bit.ly/37ldz64",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "Thunder Force",
@@ -127,7 +127,7 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/545376",
       "cuevana":"https://cuevana3.io/41032/thunder-force",
       "netflix":"https://bit.ly/3xg3aDj",
-      "disney":"",
+      "disney":""
     },
     {
       "name": "How I Became a Superheroe",
@@ -140,7 +140,7 @@ export default {
       "spoilers":"",
       "cuevana":"https://cuevana3.io/45708/comment-je-suis-devenu-super-heros",
       "netflix":"https://bit.ly/3ilpVl8",
-      "disney":"",
+      "disney":""
     },
     { 
       "name": "Unidos",
@@ -153,6 +153,6 @@ export default {
       "spoilers":"https://www.doesthedogdie.com/media/40977",
       "cuevana":"https://www2.cuevana3.video/8424/unidos",
       "netflix":"",
-      "disney":"https://www.disneyplus.com/es-419/movies/unidos/xVcGOSq9BY21",
+      "disney":"https://www.disneyplus.com/es-419/movies/unidos/xVcGOSq9BY21"
   }] 
   };
