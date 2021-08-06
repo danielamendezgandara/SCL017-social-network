@@ -25,9 +25,8 @@ export default()=>{
   <div class="register-grid">
   <div class="social">
     <div class="text-signUp">
-    <p>O bien ingresa con <p><br>
+    <p>o puedes ingresar con tus cuentas de<p><br>
     </div>
-    <img id="twiter" src="img/twitter.png">
     <img id="google" src="img/google.png">
     <img id="facebook" src="img/facebok.png">
     <br>
@@ -51,8 +50,7 @@ export default()=>{
         title="Ej. usuario@abcd.com"
         required
       />
-      <br />
-
+    
       <input
         type="password"
         id="pass-creation"
@@ -68,7 +66,6 @@ export default()=>{
     </form>
 
     <div class="social-2">
-      <img id="twitter-register" src="img/twitter2.png">
       <img id="google-register" src="img/google2.png">
       <img id="facebook-register" src="img/facebook2.png">
     </div>

@@ -6,7 +6,7 @@ const signInUserEmailPassword = () =>{
     const message=document.getElementById("messageLogin");
     loginUserWithEmailPassword(email,password).then((userLogin) => {
         if(userLogin.user.emailVerified !== true){
-          message.innerHTML='Valida tu cuenta por favor.Revisa tu correo.';
+          message.innerHTML='Valida tu cuenta por favor. Revisa tu correo.';
         }else{
          window.location.hash='#home';
         }

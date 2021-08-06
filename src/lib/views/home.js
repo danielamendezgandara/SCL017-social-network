@@ -1,6 +1,9 @@
+import pelicula from "./pelicula.js";
+
 export default ()=>{
-    const homeView=`<div>
-    <a href="#profile">profile</a>
+    const homeView=`<div id="home">
+    <a href="#profile">Perfil</a>
+    
     <section class="carousel">
     <ul>
     <li><img src="data/imgPortada/ava.jpg" alt=""></li>
@@ -20,5 +23,14 @@ export default ()=>{
     </div>`;
     const homePage=document.createElement('section');
     homePage.innerHTML=homeView;
+
+    const dataMovie = pelicula.pelicula;
+
+    dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
+      const genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      homePage.appendChild(genderMatch);
+    });
+
     return homePage;
 }
