@@ -30,7 +30,7 @@ export default ()=>{
     <img src="" alt="">
     </section>
   <section class="category-3">
-    <p class="category-text">Suspenso/p>
+    <p class="category-text">Suspenso</p>
     <p class="showAll">Ver todo</p>
    <img src="" alt="">
    </section>
