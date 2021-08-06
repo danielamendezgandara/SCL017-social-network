@@ -1,4 +1,4 @@
-import pelicula from "../src/data/pelicula.js";
+import pelicula from "../controllers/pelicula.js";
 
 export default ()=>{
     const homeView=`<div id="home">
