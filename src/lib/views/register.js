@@ -25,7 +25,7 @@ export default()=>{
   <div class="register-grid">
   <div class="social">
     <div class="text-signUp">
-    <p>O bien ingresa con <p><br>
+    <p>o puedes ingresar con tus cuentas de<p><br>
     </div>
     <img id="google" src="img/google.png">
     <img id="facebook" src="img/facebok.png">
