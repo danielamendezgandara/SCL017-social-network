@@ -3,22 +3,7 @@ import pelicula from "../../data/pelicula.js";
 export default ()=>{
     const homeView=`<div id="home">
     <div><img class= "img-logo" src="img/logo.png"></div>
-    <div class="text"> 
-    <h1>MENÚ</h1>
-    </div>
-    <div><img class="" src=""></div>
-    <a href="#profile">Perfil</a>
-    <div>
-    <h1>CATEGORÍAS</h1>
-    <ul>
-    <li>Terror</li>
-    <li>Acción</li>
-    <li>Suspenso</li>
-    <li>Comedia</li>
-    </ul>
-    </div>
-
-    <section class="carousel">
+  <section class="carousel">
     <ul>
     <li><img src="data/imgPortada/ava.jpg" alt=""></li>
     <li><img src="data/imgPortada/blackWidow.jpg" alt=""></li>
@@ -33,7 +18,33 @@ export default ()=>{
     <li><img src="data/imgPortada/thunderForce.jpeg" alt=""></li>
     <li><img src="data/imgPortada/unidos.jpg" alt=""></li>
     </ul>
+    </section>
+  <section class="category-1">
+      <p class="category-text">Terror</p>
+       <p class="showAll">Ver todo</p>
+      <img src="" alt="">
+    </section>
+  <section class="category-2">
+     <p class="category-text">Acción</p>
+     <p class="showAll">Ver todo</p>
+    <img src="" alt="">
+    </section>
+  <section class="category-3">
+    <p class="category-text">Suspenso/p>
+    <p class="showAll">Ver todo</p>
+   <img src="" alt="">
+   </section>
+   <section class="category-4">
+   <p class="category-text">Comedia</p>
+   <p class="showAll">Ver todo</p>
+  <img src="" alt="">
   </section>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#profile">Perfil</a>
+    <a href="#">Cerrar sesión</a>
+  </nav>
+
     </div>`;
     const homePage=document.createElement('section');
     homePage.innerHTML=homeView;
