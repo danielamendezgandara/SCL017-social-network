@@ -2,8 +2,22 @@ import pelicula from "../../data/pelicula.js";
 
 export default ()=>{
     const homeView=`<div id="home">
+    <div><img class= "img-logo" src="img/logo.png"></div>
+    <div class="text"> 
+    <h1>MENÚ</h1>
+    </div>
+    <div><img class="" src=""></div>
     <a href="#profile">Perfil</a>
-    
+    <div>
+    <h1>CATEGORÍAS</h1>
+    <ul>
+    <li>Terror</li>
+    <li>Acción</li>
+    <li>Suspenso</li>
+    <li>Comedia</li>
+    </ul>
+    </div>
+
     <section class="carousel">
     <ul>
     <li><img src="data/imgPortada/ava.jpg" alt=""></li>
