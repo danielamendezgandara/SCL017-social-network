@@ -1,5 +1,6 @@
-import pelicula from "../../data/pelicula.js";
-
+import pelicula from "../../data/peliculas.js";
+import { changePage, menuNavBar } from "../controllers/navbar-controller.js";
+import { navbar } from "./navbar.js";
 export default ()=>{
     const homeView=`<div id="home">
     <div><img class= "img-logo" src="img/logo.png"></div>
@@ -44,13 +45,15 @@ export default ()=>{
     <a href="#profile">Perfil</a>
     <a href="#">Cerrar sesión</a>
   </nav>
-
     </div>`;
     const homePage=document.createElement('section');
     homePage.innerHTML=homeView;
-
+    homePage.appendChild(navbar());
     const dataMovie = pelicula.pelicula;
-
+    menuNavBar.forEach(menu=>homePage.querySelector("#"+ menu).addEventListener('click',function(event){
+     changePage(event,homePage);
+    }));
+    menuNavBar.forEach(menu=>console.log("#"+menu));
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
       const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;

@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" href="img/favicon.png"/>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="desktop.css" media="(min-width: 1200px)"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
   <title>MovieTalk</title>
 </head>
 <body>
@@ -18,7 +19,16 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use  
      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <svg width="0" height="0" >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" id="blurFilter"/>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -15" result="goo" />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
 
+      </defs>
+    </svg>
 <script>
   // Your web app's Firebase configuration
   const firebaseConfig = {

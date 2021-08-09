@@ -96,3 +96,7 @@ h3{
     margin-right:5%;
     margin-top:2%;
 }
+
+#navbarContainer{
+ display: none;
+}
