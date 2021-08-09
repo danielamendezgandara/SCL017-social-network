@@ -40,9 +40,9 @@ export default ()=>{
   <img src="" alt="">
   </section>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#profile">Perfil</a>
-    <a href="#">Cerrar sesión</a>
+    <a href="#home"><img src="img/home.png"/></a>
+    <a href="#profile"><img src="img/profile.png"/></a>
+    <a href="#"><img src="img/logout.png"/></a>
   </nav>
     </div>`;
     const homePage=document.createElement('section');
