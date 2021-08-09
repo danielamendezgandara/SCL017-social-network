@@ -54,6 +54,21 @@ export default ()=>{
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       homePage.appendChild(genderMatch);
     });
+    dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
+      const genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      homePage.appendChild(genderMatch);
+    });
+    dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
+      const genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      homePage.appendChild(genderMatch);
+    });
+    dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
+      const genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      homePage.appendChild(genderMatch);
+    });
 
     return homePage;
 }
