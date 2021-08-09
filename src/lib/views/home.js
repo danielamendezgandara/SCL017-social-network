@@ -1,5 +1,6 @@
 import pelicula from "../../data/pelicula.js";
 
+
 export default ()=>{
     const homeView=`<div id="home">
     <div><img class="img-logo2" src="img/logo.png"></div>
@@ -22,59 +23,48 @@ export default ()=>{
   <section class="category-1">
       <p class="category-text">Terror</p>
        <p class="showAll">Ver todo</p>
-         <div id="imgTerror"></div>
+        <div class=viewMovie>
+         <img class="imgHome" src="data/imgHome/bloodHome.jpg">
+         <img class="imgHome" src="data/imgHome/fearStreetHome.jpg">    
+         <img class="imgHome" src="data/imgHome/laManoHome.jpg"> 
+         </div>        
     </section>
   <section class="category-2">
      <p class="category-text">Acción</p>
       <p class="showAll">Ver todo</p>
-        <div id="imgAccion"></div>
+        <div class=viewMovie>
+          <img class="imgHome" src="data/imgHome/blackWidowHome.jpg">
+          <img class="imgHome" src="data/imgHome/avaHome.jpg">    
+          <img class="imgHome" src="data/imgHome/joltHome.jpg"> 
+          </div>   
     </section>
   <section class="category-3">
     <p class="category-text">Suspenso</p>
       <p class="showAll">Ver todo</p>
-       <div id="imgSuspenso"></div>
+      <div class=viewMovie>
+      <img class="imgHome" src="data/imgHome/oxygenHome.jpg">
+      <img class="imgHome" src="data/imgHome/girlNextHome.jpg">    
+      <img class="imgHome" src="data/imgHome/theParamedicHome.jpg"> 
+      </div> 
    </section>
    <section class="category-4">
     <p class="category-text">Comedia</p>
       <p class="showAll">Ver todo</p>
-        <div id="imgComedia"></div>
+      <div class=viewMovie>
+      <img class="imgHome" src="data/imgHome/thunderForceHome.jpg">
+      <img class="imgHome" src="data/imgHome/unidosHome.jpg">    
+      <img class="imgHome" src="data/imgHome/howBecameHome.jpg"> 
+      </div> 
   </section>
   <nav>
+    <div id=navBar >
     <a href="#home"><img src="img/home.png"/></a>
     <a href="#profile"><img src="img/profile.png"/></a>
     <a href="#"><img src="img/logout.png"/></a>
+    </div>
   </nav>
     </div>`;
     const homePage=document.createElement('section');
     homePage.innerHTML=homeView;
-
-    const dataMovie = pelicula.pelicula;
-    // const viewTerror = document.getElementById("imgTerror");
-    // const viewAccion = document.getElementById("imgAccion");
-    // const viewSuspenso = document.getElementById("imgSuspenso");
-    // const viewComedia = document.getElementById("imgComedia");
-
-
-    dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
-      homePage.appendChild(genderMatch);
-    });
-    dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
-      homePage.appendChild(genderMatch);
-    });
-    dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
-      homePage.appendChild(genderMatch);
-    });
-    dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
-      homePage.appendChild(genderMatch);
-    });
-
     return homePage;
 }
