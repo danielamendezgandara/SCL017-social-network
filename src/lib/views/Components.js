@@ -5,7 +5,7 @@ const components = {
      '#': Register(),
      '#home': Home(),
      '#profile': Profile(),
-     '' : Register()
+     '' : Register(),
 }
 
 export default components;
