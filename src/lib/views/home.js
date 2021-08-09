@@ -22,22 +22,22 @@ export default ()=>{
   <section class="category-1">
       <p class="category-text">Terror</p>
        <p class="showAll">Ver todo</p>
-      <div id="imgHome"></div>
+         <div id="imgTerror"></div>
     </section>
   <section class="category-2">
      <p class="category-text">Acción</p>
-     <p class="showAll">Ver todo</p>
-    <img src="" alt="">
+      <p class="showAll">Ver todo</p>
+        <div id="imgAccion"></div>
     </section>
   <section class="category-3">
     <p class="category-text">Suspenso</p>
-    <p class="showAll">Ver todo</p>
-   <img src="" alt="">
+      <p class="showAll">Ver todo</p>
+       <div id="imgSuspenso"></div>
    </section>
    <section class="category-4">
-   <p class="category-text">Comedia</p>
-   <p class="showAll">Ver todo</p>
-  <img src="" alt="">
+    <p class="category-text">Comedia</p>
+      <p class="showAll">Ver todo</p>
+        <div id="imgComedia"></div>
   </section>
   <nav>
     <a href="#home"><img src="img/home.png"/></a>
@@ -49,23 +49,29 @@ export default ()=>{
     homePage.innerHTML=homeView;
 
     const dataMovie = pelicula.pelicula;
+    // const viewTerror = document.getElementById("imgTerror");
+    // const viewAccion = document.getElementById("imgAccion");
+    // const viewSuspenso = document.getElementById("imgSuspenso");
+    // const viewComedia = document.getElementById("imgComedia");
+
+
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
-      const genderMatch = document.createElement("div");
+      let genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       homePage.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
-      const genderMatch = document.createElement("div");
+      let genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       homePage.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
-      const genderMatch = document.createElement("div");
+      let genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       homePage.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
-      const genderMatch = document.createElement("div");
+      let genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       homePage.appendChild(genderMatch);
     });
