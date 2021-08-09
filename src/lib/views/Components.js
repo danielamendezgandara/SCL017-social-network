@@ -4,7 +4,8 @@ import Register from './Register.js';
 const components = {
      '#': Register(),
      '#home': Home(),
-     '#profile': Profile()
+     '#profile': Profile(),
+     '' : Register()
 }
 
 export default components;
