@@ -1,4 +1,4 @@
-import pelicula from "../../data/pelicula.js";
+// import pelicula from "../../data/pelicula.js";
 
 
 export default ()=>{
