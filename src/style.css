@@ -12,8 +12,8 @@ body {
     text-align: center;
 }
 .img-logo {
-    width: 122px;
-    height: 180px;
+    width: 30%;
+    height: 40%;
     margin: 30px;
     align-self: center;
 }
@@ -54,7 +54,7 @@ input {
     box-shadow: 0px 0px 15px rgba(6, 220, 176, 0.6);
     border-radius: 5px;
     color: white;
-    margin: 40px;
+    margin: 30px;
     border-style: none;
 }
 h2, .text-signUp {
@@ -153,7 +153,7 @@ h3 {
     }
   }
 .carousel{
-    width: 60%;
+    width: 90%;
     margin: auto;
     overflow: hidden;
 }
@@ -184,8 +184,7 @@ h3 {
      80%{margin-left:-400%;}
      100%{margin-left:-400%;}
 }
-.carousel img:hover
-   {
+.carousel img:hover{
    -webkit-transform: scale(1.3);
    -ms-transform: scale(1.3);
    transform: scale(1.3);
@@ -193,4 +192,19 @@ h3 {
 }
 #messageLogin {
     color: white;
+}
+.img-logo2 {
+    width: 10%;
+    height: 18%;
+    padding: 5%;
+}
+.category-1, .category-2, .category-3, .category-4 {
+    color: #00CFC3;
+}
+.showAll {
+    text-align: right;
+    margin-top: -25px;
+}
+.imgHome {
+    width: 20%;
 }

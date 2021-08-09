@@ -2,7 +2,7 @@ import pelicula from "../../data/pelicula.js";
 
 export default ()=>{
     const homeView=`<div id="home">
-    <div><img class= "img-logo" src="img/logo.png"></div>
+    <div><img class="img-logo2" src="img/logo.png"></div>
   <section class="carousel">
     <ul>
     <li><img src="data/imgPortada/ava.jpg" alt=""></li>
@@ -22,7 +22,7 @@ export default ()=>{
   <section class="category-1">
       <p class="category-text">Terror</p>
        <p class="showAll">Ver todo</p>
-      <img src="" alt="">
+      <div class="imgHome"></div>
     </section>
   <section class="category-2">
      <p class="category-text">Acción</p>
@@ -44,13 +44,11 @@ export default ()=>{
     <a href="#profile">Perfil</a>
     <a href="#">Cerrar sesión</a>
   </nav>
-
     </div>`;
     const homePage=document.createElement('section');
     homePage.innerHTML=homeView;
 
     const dataMovie = pelicula.pelicula;
-
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
       const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
