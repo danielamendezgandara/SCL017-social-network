@@ -4,10 +4,13 @@ const page=document.getElementById('root');
 
 const changeRoute=(route)=>{
     const hash=route.replace(/#/g,'');
-    window.history.replaceState({},hash,'/'+`${hash}`);
+    const hashpath='/'+hash;
+    console.log(hashpath);
+    window.history.replaceState({},hash,hashpath);
 }
 
 export const changePath=(path)=>{
+   console.log(path);
     const view=path.replace('/','#');
     page.innerHTML='';
     /*onAuthStateChange
