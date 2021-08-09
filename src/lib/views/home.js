@@ -22,7 +22,7 @@ export default ()=>{
   <section class="category-1">
       <p class="category-text">Terror</p>
        <p class="showAll">Ver todo</p>
-      <div class="imgHome"></div>
+      <div id="imgHome"></div>
     </section>
   <section class="category-2">
      <p class="category-text">Acción</p>
