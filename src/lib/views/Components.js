@@ -1,15 +1,3 @@
-import Home from './Home.js';
-import Profile from './Profile.js';
-import Register from './Register.js';
-const components = {
-     '#': Register(),
-     '#home': Home(),
-     '#profile': Profile(),
-     '' : Register(),
-}
-
-export default components;
-
 import home from './home.js';
 import profile from './profile.js';
 import register from './register.js';
@@ -34,4 +22,3 @@ export const hrefContent = {
      '/profile': profile()
  }
 
- /*borrar encabezado hasta export default components*/

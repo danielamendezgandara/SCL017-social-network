@@ -133,7 +133,6 @@ export default ()=>{
     function test(movieName){
       let movieWindow = window.open();
       movieWindow.document.body.innerHTML= movieName;
-      
     }
   
     
