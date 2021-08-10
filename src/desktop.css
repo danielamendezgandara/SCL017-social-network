@@ -121,3 +121,7 @@ h3{
     justify-content: space-around;
     background: #0E0E0E;
 }
+.movieSheetName, #sheetContainerId {
+    color:white;
+    width: 500px;
+}

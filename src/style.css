@@ -228,3 +228,7 @@ h3 {
     height: 30px;
     padding: 5%;
 }
+.movieSheetName, #sheetContainerId {
+    color:white;
+    width: 500px;
+}
