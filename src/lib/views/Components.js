@@ -1,11 +1,23 @@
-import Home from './home.js';
-import Profile from './profile.js';
-import Register from './register.js';
+import home from './home.js';
+import profile from './profile.js';
+import register from './register.js';
+
 const components = {
-     "#": Register(),
-     "#home": Home(),
-     "#profile": Profile(),
-     "": Home()
+     "#": register(),
+     "#home": home(),
+     "#profile": profile(),
+     "": home()
 }
 
-export default components;
+export const hrefContent = {
+     '#' : register(),
+     '' : register(),
+     '#home': home(),
+     '#profile': profile()
+ }
+ 
+ export const routes = {
+     '/' : register(),
+     '/home' : home(),
+     '/profile': profile()
+ }
