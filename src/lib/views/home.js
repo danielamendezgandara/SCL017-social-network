@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import { moviePost } from "./movie.js";
+import  {moviePost}  from "./movie.js";
 
 export default ()=>{
     const homeView=`<div id="home" class="home">
@@ -73,7 +73,7 @@ export default ()=>{
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
       let genderMatch = document.createElement("div");
       genderMatch.onclick = function () {
-        moviePost(movieName);
+        moviePost(gender);
       };
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewTerror.appendChild(genderMatch);

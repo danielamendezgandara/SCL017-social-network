@@ -1,7 +1,22 @@
     
-export const moviePost = (movieName) => {
-      let movieWindow = window.open();
-      movieWindow.document.body.innerHTML= movieName;
-};
+const moviePost = () => {
+window.location.hash='#movie';
+console.log(movieName);
+document.body.innerHTML= movieName;
 
-// export {moviePost};
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export {moviePost};
+
+
