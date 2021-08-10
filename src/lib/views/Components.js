@@ -1,7 +1,7 @@
 import home from './home.js';
 import profile from './profile.js';
 import register from './register.js';
-import movie from './movie.js';
+// import movie from './movie.js';
 
 const components = {
      "#": register(),
@@ -15,13 +15,13 @@ export const hrefContent = {
      '' : register(),
      '#home': home(),
      '#profile': profile(),
-     '#movie': movie()
+    //  '#movie': movie()
  }
  
  export const routes = {
      '/' : register(),
      '/home' : home(),
      '/profile': profile(),
-     '/movie' : movie()
+    //  '/movie' : movie()
  }
 

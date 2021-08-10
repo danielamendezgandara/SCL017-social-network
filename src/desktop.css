@@ -112,8 +112,8 @@ h3{
     padding: 1%;
 }
 .imgHome {
-    width: 20%;
-    max-height: 40%;
+    width: 280px;
+    max-height: 350px;
 }
 #navBar {
     display: flex;

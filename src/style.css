@@ -210,14 +210,15 @@ h3 {
     margin-top: -25px;
 }
 .imgHome {
-    width: 30%;
-    max-height: 200px;
-    padding: 2%;
+    width: 90%;
+    max-height: 110px; 
+    padding: 5px; 
 }
 .viewMovie{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 5px;
 }
 #navBar {
     display: flex;

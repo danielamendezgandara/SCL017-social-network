@@ -1,4 +1,4 @@
-// import pelicula from "../../data/pelicula.js";
+import pelicula from "../../data/pelicula.js";
 
 export default ()=>{
     const homeView=`<div id="home" class="home">
@@ -25,44 +25,28 @@ export default ()=>{
       <section class="category-1">
         <p class="category-text">Terror</p>
         <p class="showAll">Ver todo</p>
-        <div class=viewMovie>
-         <img class="imgHome" id="bloodHome" src="data/imgHome/bloodHome.jpg">
-         <img class="imgHome" id="fearStreetHome" src="data/imgHome/fearStreetHome.jpg">    
-         <img class="imgHome" id="laManoHome" src="data/imgHome/laManoHome.jpg"> 
-         </div>        
+        <div id="imgTerror" class=viewMovie></div>        
       </section>
     </div>
     <div class="six">
        <section class="category-2">
         <p class="category-text">Acción</p>
         <p class="showAll">Ver todo</p>
-        <div class=viewMovie>
-          <img class="imgHome" id="blackWidowHome" src="data/imgHome/blackWidowHome.jpg">
-          <img class="imgHome" id="avaHome" src="data/imgHome/avaHome.jpg">    
-          <img class="imgHome" id="joltHome" src="data/imgHome/joltHome.jpg"> 
-          </div>   
+        <div id="imgAccion" class=viewMovie></div>   
       </section>
     </div>
     <div class="eight">
       <section class="category-3">
         <p class="category-text">Suspenso</p>
         <p class="showAll">Ver todo</p>
-        <div class=viewMovie>
-        <img class="imgHome" id="oxygenHome" src="data/imgHome/oxygenHome.jpg">
-        <img class="imgHome" id="girlNextHome" src="data/imgHome/girlNextHome.jpg">    
-        <img class="imgHome" id="theParamedicHome" src="data/imgHome/theParamedicHome.jpg"> 
-        </div> 
+        <div id="imgSuspenso" class=viewMovie></div> 
       </section>
     </div>
     <div class="ten">  
       <section class="category-4">
-      <p class="category-text">Comedia</p>
-      <p class="showAll">Ver todo</p>
-      <div class=viewMovie>
-        <img class="imgHome" id="thunderForceHome" src="data/imgHome/thunderForceHome.jpg">
-        <img class="imgHome" id="unidosHome" src="data/imgHome/unidosHome.jpg">    
-        <img class="imgHome" id="howBecameHome" src="data/imgHome/howBecameHome.jpg"> 
-          </div> 
+        <p class="category-text">Comedia</p>
+        <p class="showAll">Ver todo</p>
+        <div id="imgComedia" class=viewMovie></div> 
       </section>
     </div>  
   <nav>
@@ -78,63 +62,34 @@ export default ()=>{
     const homePage=document.createElement('div');
     homePage.innerHTML=homeView;
 
-    //Todos los listener
-    homePage.querySelector("#bloodHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-      homePage.querySelector("#fearStreetHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#laManoHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#blackWidowHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#avaHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#joltHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#oxygenHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#girlNextHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#theParamedicHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-      homePage.querySelector("#thunderForceHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#unidosHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-    homePage.querySelector("#howBecameHome").addEventListener("click", evt=>{
-      test(evt.target.id)
-    }, false
-    );
-  
-    
-    
-    function test(movieName){
-      let movieWindow = window.open();
-      movieWindow.document.body.innerHTML= movieName;
-    }
-  
-    
+    const dataMovie = pelicula.pelicula;
+    const viewTerror = homePage.querySelector("#imgTerror");
+    const viewAccion = homePage.querySelector("#imgAccion");
+    const viewSuspenso = homePage.querySelector("#imgSuspenso");
+    const viewComedia = homePage.querySelector("#imgComedia");
+
+
+    dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
+      let genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      viewTerror.appendChild(genderMatch);
+    });
+    dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
+      let genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      viewAccion.appendChild(genderMatch);
+    });
+    dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
+      let genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      viewSuspenso.appendChild(genderMatch);
+    });
+    dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
+      let genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      viewComedia.appendChild(genderMatch);
+    });
+
+   
     return homePage;
 }
