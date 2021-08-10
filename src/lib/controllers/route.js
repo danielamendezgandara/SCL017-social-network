@@ -15,7 +15,7 @@ export const changePath=(path)=>{
     /*if(user){
        window.location.hash=''
     }*/
-    console.log("changePath");
+   /* console.log("changePath");*/
     page.appendChild(components[view]);
 
  }
@@ -26,3 +26,10 @@ export const changeView=(route)=>{
    page.appendChild(components[route]);
    changeRoute(route);
 };
+
+export const changeRoute=(route)=>{
+   const hash=route.replace(/#/g,'');
+   window.history.replaceState({},hash,'/'+`${hash}`);
+}
+
+/*borrar las funciones menos export const changeRoute*/
