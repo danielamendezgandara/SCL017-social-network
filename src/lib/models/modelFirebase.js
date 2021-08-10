@@ -48,8 +48,10 @@ const objErrorMessage = {
            const uid = user.uid;
           console.log(emailVerified);
           console.log('Existe un usuario activo');
+          return true;
          } else {
            console.log('No existe un usuario activo');
+           return false;
          }
        });
       };
