@@ -86,38 +86,46 @@ h3{
     text-align: center;
 }
 .two {
-    grid-area: 1 / 2 / span 1 / span 2;
+    grid-area: 1 / 2 / span 1 / span 2; border-left: solid white;
   }
 .four {
-    grid-area: 2 / 2 / span 1 / span 2;
+    grid-area: 2 / 2 / span 1 / span 2;  border-left: solid white;
   }
 .six {
-    grid-area: 3 / 2 / span 1 / span 2;
+    grid-area: 3 / 2 / span 1 / span 2; border-left: solid white;
   }
 .eight {
-    grid-area: 4 / 2 / span 1 / span 2;
+    grid-area: 4 / 2 / span 1 / span 2; border-left: solid white;
   }
 .ten {
-    grid-area: 5 / 2 / span 1 / span 2;
+    grid-area: 5 / 2 / span 1 / span 2; border-left: solid white;
   }
 .img-logo2 {
-    width: 65%;
+    width: 60%;
     height: 50%;
-    margin: 20% 30% 0% 30%;
+    margin: 20% 30% 0% 30%;  margin-left: 15%;
 }
 .carousel{
-    margin: 5%;
+    margin: 5%;     margin-left: 12%; width:78%;
 }
 .category-1, .category-2, .category-3, .category-4 {
-    padding: 1%;
+    padding: 1%;    margin-left: 15%; width: 65%;
 }
 .imgHome {
     width: 280px;
-    max-height: 350px;
+    max-height: 350px;   margin: 10%;
 }
 #navBar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background: #0E0E0E;
+    background: #0E0E0E;  margin-top: 80%; margin-left: 1%;
+}
+
+.three,.five,.seven, .nine{
+    margin-top:10em;
+}
+
+.one{
+    width: 230px;
 }
