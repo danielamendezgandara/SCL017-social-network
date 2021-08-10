@@ -26,9 +26,9 @@ export default ()=>{
         <p class="category-text">Terror</p>
         <p class="showAll">Ver todo</p>
         <div class=viewMovie>
-         <img class="imgHome" src="data/imgHome/bloodHome.jpg">
-         <img class="imgHome" src="data/imgHome/fearStreetHome.jpg">    
-         <img class="imgHome" src="data/imgHome/laManoHome.jpg"> 
+         <img class="imgHome" id="bloodHome" src="data/imgHome/bloodHome.jpg">
+         <img class="imgHome" id="fearStreetHome" src="data/imgHome/fearStreetHome.jpg">    
+         <img class="imgHome" id="laManoHome" src="data/imgHome/laManoHome.jpg"> 
          </div>        
       </section>
     </div>
@@ -37,9 +37,9 @@ export default ()=>{
         <p class="category-text">Acción</p>
         <p class="showAll">Ver todo</p>
         <div class=viewMovie>
-          <img class="imgHome" src="data/imgHome/blackWidowHome.jpg">
-          <img class="imgHome" src="data/imgHome/avaHome.jpg">    
-          <img class="imgHome" src="data/imgHome/joltHome.jpg"> 
+          <img class="imgHome" id="blackWidowHome" src="data/imgHome/blackWidowHome.jpg">
+          <img class="imgHome" id="avaHome" src="data/imgHome/avaHome.jpg">    
+          <img class="imgHome" id="joltHome" src="data/imgHome/joltHome.jpg"> 
           </div>   
       </section>
     </div>
@@ -48,9 +48,9 @@ export default ()=>{
         <p class="category-text">Suspenso</p>
         <p class="showAll">Ver todo</p>
         <div class=viewMovie>
-        <img class="imgHome" src="data/imgHome/oxygenHome.jpg">
-        <img class="imgHome" src="data/imgHome/girlNextHome.jpg">    
-        <img class="imgHome" src="data/imgHome/theParamedicHome.jpg"> 
+        <img class="imgHome" id="oxygenHome" src="data/imgHome/oxygenHome.jpg">
+        <img class="imgHome" id="girlNextHome" src="data/imgHome/girlNextHome.jpg">    
+        <img class="imgHome" id="theParamedicHome" src="data/imgHome/theParamedicHome.jpg"> 
         </div> 
       </section>
     </div>
@@ -59,9 +59,9 @@ export default ()=>{
       <p class="category-text">Comedia</p>
       <p class="showAll">Ver todo</p>
       <div class=viewMovie>
-        <img class="imgHome" src="data/imgHome/thunderForceHome.jpg">
-        <img class="imgHome" src="data/imgHome/unidosHome.jpg">    
-        <img class="imgHome" src="data/imgHome/howBecameHome.jpg"> 
+        <img class="imgHome" id="thunderForceHome" src="data/imgHome/thunderForceHome.jpg">
+        <img class="imgHome" id="unidosHome" src="data/imgHome/unidosHome.jpg">    
+        <img class="imgHome" id="howBecameHome" src="data/imgHome/howBecameHome.jpg"> 
           </div> 
       </section>
     </div>  
@@ -74,7 +74,68 @@ export default ()=>{
     </div>
   </nav>
     </div>`;
-    const homePage=document.createElement('section');
+
+    const homePage=document.createElement('div');
     homePage.innerHTML=homeView;
+
+    //Todos los listener
+    homePage.querySelector("#bloodHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+      homePage.querySelector("#fearStreetHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#laManoHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#blackWidowHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#avaHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#joltHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#oxygenHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#girlNextHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#theParamedicHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+      homePage.querySelector("#thunderForceHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#unidosHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+    homePage.querySelector("#howBecameHome").addEventListener("click", evt=>{
+      test(evt.target.id)
+    }, false
+    );
+  
+    
+    
+    function test(movieName){
+      let movieWindow = window.open();
+      movieWindow.document.body.innerHTML= movieName;
+      
+    }
+  
+    
     return homePage;
 }
