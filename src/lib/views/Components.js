@@ -1,6 +1,6 @@
-import Home from './Home.js';
-import Profile from './Profile.js';
-import Register from './Register.js';
+import Home from './home.js';
+import Profile from './profile.js';
+import Register from './register.js';
 const components = {
      "#": Register(),
      "#home": Home(),

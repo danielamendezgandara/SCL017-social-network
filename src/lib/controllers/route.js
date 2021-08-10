@@ -1,4 +1,4 @@
-import components from "../views/components.js";
+import components from "../views/Components.js";
 
 const page=document.getElementById('root');
 
