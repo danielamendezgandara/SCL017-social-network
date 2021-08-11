@@ -51,10 +51,11 @@ export default ()=>{
     </div>  
   <nav>
     <div id=navBar >
-      <div class="three"><a href="#home"><img src="img/home.png"/></a></div>
-      <div class="five"><a href="#profile"><img src="img/profile.png"/></a></div>
+      <div class="three"><a href="#home"><img src="img/home.png"/></a><span class="texto">Inicio</span></div>
+      <div class="five"><a href="#profile"><img src="img/profile.png"/></a><span class="texto">Perfil</span></div>
       <div class="seven" style="display:none"></div>
-      <div class="nine"><a href="#"><img src="img/logout.png"/></a></div>
+      <div class="movie-category"><span>CATEGORÍAS</span><span>Terror</span><span>Acción</span><span>Suspenso</span><span>Comedia</span></div>
+      <div class="nine"><a href="#"><img src="img/logout.png"/></a><span align="center" class="texto">Salir</span></div>
     </div>
   </nav>
     </div>`;
