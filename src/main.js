@@ -15,6 +15,6 @@ window.addEventListener('hashchange',()=>{
 });
 window.addEventListener('popstate',()=>{
     container.innerHTML='';
-    container.appendChild(routes[window.location.pathname]);
+    container.appendChild(routes[pathname]);
 });
 

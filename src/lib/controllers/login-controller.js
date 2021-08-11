@@ -20,7 +20,7 @@ const signInUserEmailPassword = () =>{
 const signInUserGoogle = () =>{
   signInUserGoogleAccount().then((result) => {
     window.location.hash='#home';
-    console.log(result.user);
+    // console.log(result.user);
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
