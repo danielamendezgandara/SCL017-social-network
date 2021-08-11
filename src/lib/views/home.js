@@ -1,4 +1,7 @@
 import pelicula from "../../data/pelicula.js";
+import  {movieMatch,huevo}  from "./movie.js";
+
+
 
 export default ()=>{
     const homeView=`<div id="home" class="home">
@@ -25,7 +28,7 @@ export default ()=>{
       <section class="category-1">
         <p class="category-text">Terror</p>
         <p class="showAll">Ver todo</p>
-        <div id="imgTerror" class=viewMovie></div>        
+        <div id="imgTerror" class=viewMovie><a href="#movie"></a></div>        
       </section>
     </div>
     <div class="six">
@@ -72,25 +75,40 @@ export default ()=>{
 
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
       let genderMatch = document.createElement("div");
+      genderMatch.onclick = function () { 
+        movieMatch(gender);  
+        }   
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewTerror.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
       let genderMatch = document.createElement("div");
+      genderMatch.onclick = function () { 
+        movieMatch(gender); 
+       }
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewAccion.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
       let genderMatch = document.createElement("div");
+      genderMatch.onclick = function () { 
+        movieMatch(gender); 
+       }
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewSuspenso.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
       let genderMatch = document.createElement("div");
+      genderMatch.onclick = function () { 
+        movieMatch(gender); 
+       }
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewComedia.appendChild(genderMatch);
     });
 
-   
+    huevo();
     return homePage;
 }
+
+
+

@@ -2,17 +2,14 @@ import {signInUserEmailPassword, signInUserFacebook, signInUserGoogle } from "..
 import {signUpUserEmailPassword, signUpUserGoogle} from "../controllers/register-controller.js";
 
 export default()=>{
-  const registerView = `  
+  const registerView = `
   <div id="login">
-
   <div class="logo">
     <img class="img-logo" src="img/logo.png">
   </div>
-
   <div class="text">
     <p>Comienza a compartir y leer reseñas de tus películas favoritas.</p>
   </div>
-
   <div class="input-style">
     <form id="form">
       <input type="text" id="email" placeholder=" ">
@@ -70,8 +67,7 @@ export default()=>{
       <img id="facebook-register" src="img/facebook2.png">
     </div>
   </div>
-</div>
-`;
+</div>`;
 const registerPage = document.createElement('section');
 registerPage.innerHTML =registerView;
 registerPage.querySelector('#btn').addEventListener('click',signInUserEmailPassword,false);
