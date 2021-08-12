@@ -1,6 +1,7 @@
 import pelicula from "../../data/pelicula.js";
-import  {movieMatch,huevo}  from "./movie.js";
+//import { getMovieInfo } from "../controllers/movieView-controller.js";
 
+const movieClicked=[];
 
 
 export default ()=>{
@@ -28,7 +29,7 @@ export default ()=>{
       <section class="category-1">
         <p class="category-text">Terror</p>
         <p class="showAll">Ver todo</p>
-        <div id="imgTerror" class=viewMovie><a href="#movie"></a></div>        
+        <div id="imgTerror" class=viewMovie></div>        
       </section>
     </div>
     <div class="six">
@@ -73,41 +74,48 @@ export default ()=>{
 
 
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender);  
-        }   
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      const genderMatch = document.createElement("div");
+      genderMatch.innerHTML = `<a href="#movie"><img class="imgHome" src="${gender.imgHome}"></a>`;
+      genderMatch.dataset.name=`${gender.name}`;
+      genderMatch.className='movieElement';
       viewTerror.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      const genderMatch = document.createElement("div");
+      genderMatch.className='movieElement';
+      genderMatch.dataset.name=`${gender.name}`;
+      genderMatch.innerHTML = `<a href="#movie"><img class="imgHome" src="${gender.imgHome}"></a>`;
       viewAccion.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      const genderMatch = document.createElement("div");
+      genderMatch.className='movieElement';
+      genderMatch.dataset.name=`${gender.name}`;
+      genderMatch.innerHTML = `<a href="#movie"><img class="imgHome" src="${gender.imgHome}"></a>`;
       viewSuspenso.appendChild(genderMatch);
     });
     dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      const genderMatch = document.createElement("div");
+      genderMatch.dataset.name=`${gender.name}`;
+      genderMatch.className='movieElement';
+      genderMatch.innerHTML = `<a href="#movie"><img class="imgHome" src="${gender.imgHome}"></a>`;
       viewComedia.appendChild(genderMatch);
     });
 
-    huevo();
+    const dataSetMovie=homePage.querySelectorAll('.movieElement');
+    dataSetMovie.forEach(element => element.addEventListener('click',(e)=>{
+      const event=e.currentTarget.dataset.name;
+      getMovieInfo(event);
+      console.log(event);
+      
+    }))
+    
     return homePage;
 }
 
 
+const getMovieInfo=(movieSelect)=>{
+      return movieClicked.push(movieSelect);
+}
 
+export  {movieClicked}
