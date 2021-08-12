@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import  {movieMatch,huevo}  from "./movie.js";
+import  {movieMatch}  from "./movie.js";
 
 
 
@@ -106,7 +106,7 @@ export default ()=>{
       viewComedia.appendChild(genderMatch);
     });
 
-    huevo();
+   // huevo();
     return homePage;
 }
 
