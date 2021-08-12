@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import  {movieMatch,huevo}  from "./movie.js";
+import  {movieMatch}  from "./movie.js";
 
 
 
@@ -104,8 +104,6 @@ export default ()=>{
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewComedia.appendChild(genderMatch);
     });
-
-    huevo();
     return homePage;
 }
 
