@@ -228,6 +228,9 @@ h3 {
     height: 30px;
     padding: 5%;
 }
+.movie-category{
+    display: none;
+}
 .sheetContainer{
     display: flex;
     flex-direction: column;

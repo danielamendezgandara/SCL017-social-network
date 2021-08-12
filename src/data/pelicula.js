@@ -95,7 +95,7 @@ export default {
       "gender": "Acción",
       "year": "2021",
       "synopsis": "",
-      "imgHome": "https://res.cloudinary.com/movietalk/image/upload/v1628181039/Home/blackWidowHome_dmogny.jpg",
+      "imgHome": "https://res.cloudinary.com/movietalk/image/upload/v1628787999/Home/blackWidowHome_j2n5dd.jpg",
       "imgPortada": "https://res.cloudinary.com/movietalk/image/upload/v1628181157/Portada/blackWidow_rf6ncm.jpg",
       "youtube":"https://www.youtube.com/watch?v=ybji16u608U",
       "spoilers":"https://www.doesthedogdie.com/media/723455",
