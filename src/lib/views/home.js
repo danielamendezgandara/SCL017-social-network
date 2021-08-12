@@ -1,8 +1,6 @@
 import pelicula from "../../data/pelicula.js";
 import  {movieMatch}  from "./movie.js";
 
-
-
 export default ()=>{
     const homeView=`<div id="home" class="home">
     <div class="one"><img class="img-logo2" src="img/logo.png"></div>

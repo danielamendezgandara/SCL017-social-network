@@ -231,3 +231,64 @@ h3 {
 .movie-category{
     display: none;
 }
+.sheetContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.sheetImg {
+    width: 100%;
+}
+.sheetGender {
+    color: #00CFC3;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.sheetYear{
+    color: #00CFC3;
+    font-size: 20px;
+    margin-left: 10%;
+}
+.star {
+    margin-left: 45%;
+}
+.sheetTitle{
+    color: #00CFC3;
+    font-size: 25px;
+    padding: 10px;
+}
+.sheetSyn {
+    color: white;
+    font-size: large;
+    text-align: justify;
+    padding: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.logoSpoilers {
+    width: 20%;
+    margin-left: 5%;
+}
+.logoYoutube, .logoDisney {
+    width: 30%;
+    margin-left: 5%;
+}
+.logoCuevana{
+    width: 14%;
+    margin-left: 5%;
+}
+.logoNetflix{
+    width: 17%;
+    margin-left: 5%;
+}
+.boxComm {
+    background: #272727;
+    border-radius: 5px;
+    width: 335px;
+    height: 384px;
+    margin: 5%;
+}
+.back {
+    margin: 5%;
+}
+
