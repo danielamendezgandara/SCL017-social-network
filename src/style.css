@@ -228,11 +228,6 @@ h3 {
     height: 30px;
     padding: 5%;
 }
-.sheetContainer{
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-}
 .sheetImg {
     width: 100%;
 }
@@ -270,11 +265,7 @@ h3 {
     width: 30%;
     margin-left: 5%;
 }
-.logoCuevana{
-    width: 14%;
-    margin-left: 5%;
-}
-.logoNetflix{
+.logoCuevana, .logoNetflix {
     width: 17%;
     margin-left: 5%;
 }
