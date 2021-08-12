@@ -28,7 +28,7 @@ export default ()=>{
       <section class="category-1">
         <p class="category-text">Terror</p>
         <p class="showAll">Ver todo</p>
-        <div id="imgTerror" class=viewMovie><a href="#movie"></a></div>        
+        <div id="imgTerror" class=viewMovie></div>        
       </section>
     </div>
     <div class="six">
@@ -105,8 +105,6 @@ export default ()=>{
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewComedia.appendChild(genderMatch);
     });
-
-   // huevo();
     return homePage;
 }
 
