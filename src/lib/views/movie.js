@@ -41,7 +41,7 @@ export default () => {
     </div>
     <div class="icon-back">
       <a href="#home"><img class="back" src="img/back.png"/></a>
-      <span class="texto">Volver atrás</span>
+      <span class="sheetTitle">Volver atrás</span>
     </div>
     `;
   claseGlobal.appendChild(newDivElement);
