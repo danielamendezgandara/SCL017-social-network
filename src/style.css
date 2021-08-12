@@ -231,10 +231,8 @@ h3 {
 .movie-category{
     display: none;
 }
-.sheetContainer{
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
+.texto {
+    color: #272727;
 }
 .sheetImg {
     width: 100%;
@@ -255,10 +253,10 @@ h3 {
 .sheetTitle{
     color: #00CFC3;
     font-size: 25px;
-    padding: 10px;
+    margin: 5%;
 }
 .sheetSyn {
-    color: white;
+    color: #CCFBF8;
     font-size: large;
     text-align: justify;
     padding: 2%;
@@ -277,14 +275,5 @@ h3 {
     width: 17%;
     margin-left: 5%;
 }
-.boxComm {
-    background: #272727;
-    border-radius: 5px;
-    width: 335px;
-    height: 384px;
-    margin: 5%;
-}
-.back {
-    margin: 5%;
-}
+
 
