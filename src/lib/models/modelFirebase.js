@@ -59,4 +59,7 @@ const objErrorMessage = {
   // Crear colección de datos
   export const addCollection = (newCollection,id,object) =>firebase.firestore().collection(newCollection).doc(id).set(object);
   
+  export const addComments = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('comments').add(obj);
+
+  export const addInfo = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('infoMovie').add(obj);
   

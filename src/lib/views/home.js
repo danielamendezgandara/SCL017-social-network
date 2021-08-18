@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import  {movieMatch}  from "./movie.js";
+import { movieData } from "../controllers/movie-controller.js";
 
 export default ()=>{
     const homeView=`<div id="home" class="home">
@@ -78,36 +78,40 @@ export default ()=>{
 
 
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender);  
-        }   
+      const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewTerror.appendChild(genderMatch);
+      movieData(gender.name,gender);
+      genderMatch.onclick = function () { 
+        window.location.hash = "#movie";
+        }   
     });
     dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
+      const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewAccion.appendChild(genderMatch);
+      movieData(gender.name,gender);
+      genderMatch.onclick = function () { 
+        window.location.hash = "#movie";
+       }
     });
     dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
+      const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewSuspenso.appendChild(genderMatch);
+      movieData(gender.name,gender);
+      genderMatch.onclick = function () { 
+        window.location.hash = "#movie";
+       }
     });
     dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
-      let genderMatch = document.createElement("div");
-      genderMatch.onclick = function () { 
-        movieMatch(gender); 
-       }
+      const genderMatch = document.createElement("div");
       genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
       viewComedia.appendChild(genderMatch);
+      movieData(gender.name,gender);
+      genderMatch.onclick = function () { 
+        window.location.hash = "#movie";
+       }
     });
     return homePage;
 }
