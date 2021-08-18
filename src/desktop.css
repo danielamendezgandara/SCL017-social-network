@@ -115,7 +115,7 @@ h3{
     margin: 30%;
 }
 .carousel{
-    margin: 5%;   
+    margin: 5%;      
     margin-left: 13%; 
     width:70%; 
     height: 60%;
@@ -198,4 +198,64 @@ h3{
 .logoCuevana, .logoNetflix {
     width: 5%;
     margin-left: 5%;
+}
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+#form label {
+    font-size: 40px;
+}
+input[type="radio"] {
+    display: none;
+}
+label {
+    color: grey;
+}
+/* .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}  */
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+}
+input[type="radio"]:checked ~ label {
+    color: orange;
+}
+
+
+/*  testeando boton like */
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #f44336;
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.counterStat {
+    color: white;
+    font-size: 16px;
 }

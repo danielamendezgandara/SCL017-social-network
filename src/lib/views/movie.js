@@ -1,3 +1,5 @@
+const dCounters = document.querySelectorAll('.CountLike');
+
 let globalMovie;
 export const movieMatch = (movie) => {
   globalMovie = movie;
@@ -19,7 +21,12 @@ export default () => {
     <div class="info">
       <span class="sheetGender">${globalMovie.gender}</span>
       <span class="sheetYear">${globalMovie.year}</span>
-      <img class="star" src="img/star.png"/>
+      <div class="Likecontainer">
+
+      <div class="CountLike" id="Like Count">
+  <button class="button button1"><i class="fa fa-heart"></i> Like <span class="counterStat">...</span></button>
+</div>
+       </div>
     </div>
     <div class="syn">
       <p class="sheetTitle">Sinopsis</p>
@@ -44,19 +51,32 @@ export default () => {
       <span class="sheetTitle">Volver atrás</span>
     </div>
     `;
+
+    
+
   claseGlobal.appendChild(newDivElement);
+
+
+    [].forEach.call(dCounters, function(dCounter) {
+      const el = dCounter.querySelector('button');
+      const cId = dCounter.id;
+      const dDatabase = firebase.database().ref('Like Number Counter').child(cId);
+    
+      // get firebase data
+      dDatabase.on('value', function(snap) {
+          const data = snap.val() || 0;
+          dCounter.querySelector('span').innerHTML = data;
+      });
+    
+      // set firebase data
+      el.addEventListener('click', function() {
+          dDatabase.transaction(function(dCount) {
+              return (dCount || 0) + 1;
+          });
+      });
+      
+    });
+   
 
   return moviePage;
 };
-
-
-  
-
-   
-
- 
-
-
-
-
-

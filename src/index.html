@@ -7,31 +7,50 @@
   <link rel="icon" type="image/png" href="img/favicon.png"/>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="desktop.css" media="(min-width: 1200px)"> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet" />
   <title>MovieTalk</title>
 </head>
 <body>
-  <main id="root"></main>
+  <main id="root">
+
+    
+
+</body>
+  </main>
    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  
+   <!-- <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script> -->
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+
 
 <!-- TODO: Add SDKs for Firebase products that you want to use  
      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <!-- <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script> -->
+     
+
 
 <script>
   // Your web app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyBpeFRwauY0f7zPuSB_EvSIdg09gPU2uI4",
     authDomain: "scl017-socialnetworkmovietalk.firebaseapp.com",
+    databaseURL: "https://scl017-socialnetworkmovietalk-default-rtdb.firebaseio.com",
     projectId: "scl017-socialnetworkmovietalk",
     storageBucket: "scl017-socialnetworkmovietalk.appspot.com",
     messagingSenderId: "235332975851",
-    appId: "1:235332975851:web:1f24c8818c077ee2ab12ae"
+    appId: "1:235332975851:web:1f24c8818c077ee2ab12ae",
+    // measurementId: "G-SZ1E5TEX5G"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+ 
 </script> 
+
+</script>
+
 
 <script type="module" src="main.js"></script>
 </body>
