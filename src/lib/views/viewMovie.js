@@ -1,7 +1,11 @@
 
 import pelicula from "../../data/pelicula.js";
+import { createComment,preventSendCommet } from "../controllers/comment-controller.js";
+import { getNote} from "../models/modelFirebase.js";
+import { allComments } from "./comments.js";
 
-export const viewMovie= (nameMovie)=>{
+export const viewMovie= (name)=>{
+    const nameMovie=name;
     console.log(nameMovie);
     const dataMovie = pelicula.pelicula;
   const dataFilterMovie= dataMovie.filter(movie => movie.name === nameMovie);
@@ -32,7 +36,13 @@ export const viewMovie= (nameMovie)=>{
        <a href="${dataFilterMovie[0]["netflix"]}"><img class="logoNetflix" src="data/imgIconos/netflix.png"/></a>
        <a href="${dataFilterMovie[0]["disney"]}"><img class="logoDisney" src="data/imgIconos/disney.png"/></a>
        <p class="sheetTitle">Comentarios</p>
-       <input type="text" class="box" placeholder="   Añadir Comentario">
+       <section class="comments-section" data-name="${dataFilterMovie[0]["name"]}">
+                     <articule class="comments-view" id="comments-view"></articule>
+                 <form  class="form-comments" id="form-comments">
+                      <textarea id="comment" cols="50" rows="5" class="comment" placeholder="Añade un comentario"></textarea>
+                      <button class="share-comment hide" id="share-comment">Compartir</button>
+                 </form>
+      </section>
      </div>
      <div class="icon-back">
        <a href="#home"><img class="back" src="img/back.png"/></a>
@@ -42,6 +52,27 @@ export const viewMovie= (nameMovie)=>{
      `
      const globalMovie=document.createElement('div');
      globalMovie.innerHTML=moviePage;
+     const showComments=globalMovie.querySelector('#comments-view');
+     const comment = globalMovie.querySelector('#comment');
+
+     firebase.auth().onAuthStateChanged((user) => {
+      if (user) { 
+        comment.disabled=false;
+      } else {
+        comment.disabled=true;
+      }
+    });
+    getNote(nameMovie,(querySnapshot) => {
+        showComments.innerHTML = '';
+        
+        querySnapshot.forEach(doc => {
+            console.log(doc.data());
+            showComments.appendChild(allComments(nameMovie,doc,doc.data())) ;
+        })});
+  
+    const formComment=globalMovie.querySelector('#form-comments');
+    comment.addEventListener('input',preventSendCommet);
+    formComment.addEventListener('submit',createComment);
      return globalMovie;
 }
 /*
