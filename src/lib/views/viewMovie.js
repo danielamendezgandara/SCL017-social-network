@@ -1,32 +1,36 @@
 
+import pelicula from "../../data/pelicula.js";
 
-export const viewMovie= (movie)=>{
-    console.log(movie);
-    const moviePage = `<div data-name="${movie.name}">
+export const viewMovie= (nameMovie)=>{
+    console.log(nameMovie);
+    const dataMovie = pelicula.pelicula;
+  const dataFilterMovie= dataMovie.filter(movie => movie.name === nameMovie);
+  console.log(dataFilterMovie[0]["name"]);
+    const moviePage = `<div data-name="${dataFilterMovie[0]["name"]}">
     <div class="left-test">
      <div class="img">
-       <img class="sheetImg" src="${movie.imgPortada}">
+       <img class="sheetImg" src="${dataFilterMovie[0]["imgPortada"]}">
      </div>
      <div class="info">
-       <span class="sheetGender">${movie.gender}</span>
-       <span class="sheetYear">${movie.year}</span>
+       <span class="sheetGender">${dataFilterMovie[0]["gender"]}</span>
+       <span class="sheetYear">${dataFilterMovie[0]["year"]}</span>
        <img class="star" src="img/star.png"/>
      </div>
      <div class="syn">
        <p class="sheetTitle">Sinopsis</p>
-       <p class="sheetSyn">${movie.synopsis}</p>
+       <p class="sheetSyn">${dataFilterMovie[0]["synopsis"]}</p>
       </div>
      <div class="provider-1">
        <p class="sheetTitle">Ver trailer y spoilers</p>
-       <a href="${movie.spoilers}"><img class="logoSpoilers" src="data/imgIconos/spoilers.png"/></a>
-       <a href="${movie.youtube}"><img class="logoYoutube" src="data/imgIconos/youtube.png"/></a>
+       <a href="${dataFilterMovie[0]["spoilers"]}"><img class="logoSpoilers" src="data/imgIconos/spoilers.png"/></a>
+       <a href="${dataFilterMovie[0]["youtube"]}"><img class="logoYoutube" src="data/imgIconos/youtube.png"/></a>
      </div>
     </div>
      <div class="provider-2">
        <p class="sheetTitle">Ver ahora</p>
-       <a href="${movie.cuevana}"><img class="logoCuevana" src="data/imgIconos/cuevana.png"/></a>
-       <a href="${movie.netflix}"><img class="logoNetflix" src="data/imgIconos/netflix.png"/></a>
-       <a href="${movie.disney}"><img class="logoDisney" src="data/imgIconos/disney.png"/></a>
+       <a href="${dataFilterMovie[0]["cuevana"]}"><img class="logoCuevana" src="data/imgIconos/cuevana.png"/></a>
+       <a href="${dataFilterMovie[0]["netflix"]}"><img class="logoNetflix" src="data/imgIconos/netflix.png"/></a>
+       <a href="${dataFilterMovie[0]["disney"]}"><img class="logoDisney" src="data/imgIconos/disney.png"/></a>
        <p class="sheetTitle">Comentarios</p>
        <input type="text" class="box" placeholder="   Añadir Comentario">
      </div>

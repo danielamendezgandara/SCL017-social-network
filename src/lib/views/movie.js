@@ -16,7 +16,8 @@ export default ()=>{
         if (doc.exists) {
             console.log("Document data:", doc.data());
             console.log(doc.data().movieView);
-            var docRef = firebase.firestore().collection("post").doc(doc.data().movieView);
+            sheetContainer.appendChild(viewMovie(doc.data().movieView));
+            /*var docRef = firebase.firestore().collection("post").doc(doc.data().movieView);
   docRef.get().then((doc) => {
       if (doc.exists) {
           sheetContainer.innerHTML="";
@@ -28,7 +29,7 @@ export default ()=>{
       }
   }).catch((error) => {
       console.log("Error getting document:", error);
-  });
+  });*/
 
         } else {
             // doc.data() will be undefined in this case
