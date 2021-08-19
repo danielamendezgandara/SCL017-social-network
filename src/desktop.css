@@ -200,3 +200,12 @@ h3{
     width: 5%;
     margin-left: 5%;
 }
+
+
+
+/* Estilo para la sección de comentarios*/
+.comments-section{
+    margin-left: 50%;
+    margin: 2%;
+    width: 35%;
+}
