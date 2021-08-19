@@ -1,12 +1,10 @@
-const dCounters = document.querySelectorAll('.CountLike');
-
 let globalMovie;
-export const movieMatch = (movie) => {
-  globalMovie = movie;
+export const movieMatch = (mov) => {
+  globalMovie = mov;
   window.location.hash = "#movie";
 };
 
-export default () => {
+ export const movie = () => {
   const movieView = `<div class="sheetContainer"></div>`;
   const moviePage = document.createElement("div");
   moviePage.innerHTML = movieView;
@@ -23,9 +21,12 @@ export default () => {
       <span class="sheetYear">${globalMovie.year}</span>
       <div class="Likecontainer">
 
-      <div class="CountLike" id="Like Count">
-  <button class="button button1"><i class="fa fa-heart"></i> Like <span class="counterStat">...</span></button>
-</div>
+            <div class="CountLike" id="Like Count">
+          <button class="button button1">
+          <i class="fa fa-heart"></i> Like <span class="counterStat">...</span>
+          </button>
+          </div>
+     
        </div>
     </div>
     <div class="syn">
@@ -44,39 +45,54 @@ export default () => {
       <a href="${globalMovie.netflix}"><img class="logoNetflix" src="data/imgIconos/netflix.png"/></a>
       <a href="${globalMovie.disney}"><img class="logoDisney" src="data/imgIconos/disney.png"/></a>
       <p class="sheetTitle">Comentarios</p>
-      <input type="text" class="box" placeholder="   Añadir Comentario">
+      <form>
+      <input type="textarea" id="commentfield" class="box" placeholder="   Añadir Comentario">
+      <button id="btnTxt">Publicar</button>
+      </form>
     </div>
     <div class="icon-back">
       <a href="#home"><img class="back" src="img/back.png"/></a>
       <span class="sheetTitle">Volver atrás</span>
     </div>
     `;
+    claseGlobal.appendChild(newDivElement);
 
-    
+//     document.querySelector("#btnTxt").addEventListener("submit", writeNewPost, false);
 
-  claseGlobal.appendChild(newDivElement);
+//       function writeNewPost(uid, body) {
+//         // A post entry.
+//         var postData = {
+//           author: "",
+//           uid: firebase.auth().uid,
+//           body: document.getElementById("commentfield").value,
+          
+//         };
+//       }
 
-
-    [].forEach.call(dCounters, function(dCounter) {
-      const el = dCounter.querySelector('button');
-      const cId = dCounter.id;
-      const dDatabase = firebase.database().ref('Like Number Counter').child(cId);
-    
-      // get firebase data
-      dDatabase.on('value', function(snap) {
-          const data = snap.val() || 0;
-          dCounter.querySelector('span').innerHTML = data;
-      });
-    
-      // set firebase data
-      el.addEventListener('click', function() {
-          dDatabase.transaction(function(dCount) {
-              return (dCount || 0) + 1;
-          });
-      });
       
-    });
-   
 
+
+
+//     const dCounters = document.querySelectorAll('.CountLike');
+// [].forEach.call(dCounters, function(dCounter) {
+//   const el = dCounter.querySelector('button');
+//   const cId = dCounter.id;
+//   const dDatabase = firebase.database().ref('Like Number Counter').child(cId);
+
+//   // get firebase data
+//   dDatabase.on('value', function(snap) {
+//       const data = snap.val() || 0;
+//       dCounter.querySelector('span').innerHTML = data;
+//   });
+
+//   // set firebase data
+//   el.addEventListener('click', function() {
+//       dDatabase.transaction(function(dCount) {          
+//           return (dCount || 0) + 1;
+//       });
+//   });
+ 
+// });
+    
   return moviePage;
 };

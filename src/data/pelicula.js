@@ -1,5 +1,6 @@
 export default {
     "pelicula": [{
+      "code": "T0001",
       "name": "Fear Street Part Three: 1666",
       "gender": "Terror",
       "year": "2021",
