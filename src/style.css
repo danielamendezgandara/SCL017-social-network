@@ -277,8 +277,8 @@ h3 {
 
 
 
-
-
+/*Fuente de letra y estilos para la sección comentarios*/ 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*Seccción de comentarios 
 /*Class para efectos de botones*/
 .hide{
