@@ -1,6 +1,6 @@
 // Registro de usuario e inicio de sesión de usuario mediante email y contraseña
 
-const objErrorMessage = {
+/*const objErrorMessage = {
     'auth/invalid-email':'La dirección de correo electrónico no es valida.',
     'auth/email-already-in-use': 'La dirección de correo electrónico ya esta en uso.',
     'auth/weak-password' : 'La contraseña debe tener al menos 6 caracteres.',
@@ -62,9 +62,9 @@ const objErrorMessage = {
   export const addComments = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('comments').add(obj);
 
   export const updateDoc = (archive,nameMovie,obj) => firebase.firestore().collection(archive).doc(nameMovie).update(obj);
-
+*/
  
-  /*
+  
   // Registro de usuario e inicio de sesión de usuario mediante email y contraseña
 
 
@@ -112,7 +112,8 @@ const objErrorMessage = {
   export const signOutUser = () =>firebase.auth().signOut();
   // Crear colección de datos
   export const addCollection = (newCollection,id,object) =>firebase.firestore().collection(newCollection).doc(id).set(object);
-  
+  // 
+  export const updateDoc = (archive,nameMovie,obj) => firebase.firestore().collection(archive).doc(nameMovie).update(obj);
   // Relacionado con los comentarios 
   // Añadir comentarios a cada documento de reseña de la película
   export const addComments = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('comments').add(obj);
@@ -147,6 +148,6 @@ const objErrorMessage = {
 
 // Sección de Likes
 
-/*export const addLikes = (nameMovie,idComment) => firebase.firestore().collection('post').doc(nameMovie).collection('comments')
+ export const addLikes = (nameMovie,idComment) => firebase.firestore().collection('post').doc(nameMovie).collection('comments')
 .doc(idComment)
-.update({like_count : firebase.firestore.FieldValue.increment(1)});*/
+.update({like_count : firebase.firestore.FieldValue.increment(1)});
