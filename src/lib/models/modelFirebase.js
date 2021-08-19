@@ -114,6 +114,7 @@ const objErrorMessage = {
   export const addCollection = (newCollection,id,object) =>firebase.firestore().collection(newCollection).doc(id).set(object);
   // 
   export const updateDoc = (archive,nameMovie,obj) => firebase.firestore().collection(archive).doc(nameMovie).update(obj);
+  
   // Relacionado con los comentarios 
   // Añadir comentarios a cada documento de reseña de la película
   export const addComments = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('comments').add(obj);
