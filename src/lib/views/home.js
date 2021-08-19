@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import {movieData} from "../controllers/movie-controller.js";
+import {createSetMovie, movieData} from "../controllers/movie-controller.js";
 import { visitMovie } from "../controllers/movie-controller.js";
 
 export default ()=>{
@@ -77,31 +77,10 @@ export default ()=>{
     const viewSuspenso = homePage.querySelector("#imgSuspenso");
     const viewComedia = homePage.querySelector("#imgComedia");
 
-
-    dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
-      const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
-      viewTerror.appendChild(genderMatch);
-      movieData(gender.name,gender);
-    });
-    dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
-      const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
-      viewAccion.appendChild(genderMatch);
-      movieData(gender.name,gender);
-    });
-    dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
-      const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
-      viewSuspenso.appendChild(genderMatch);
-      movieData(gender.name,gender);
-    });
-    dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
-      const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
-      viewComedia.appendChild(genderMatch);
-      movieData(gender.name,gender);
-    });
+    createSetMovie(dataMovie,"Terror",viewTerror,movieData);
+    createSetMovie(dataMovie,"Acción",viewAccion,movieData);
+    createSetMovie(dataMovie,"Suspenso",viewSuspenso,movieData);
+    createSetMovie(dataMovie,"Comedia",viewComedia,movieData);
 
     const genderMovie=homePage.querySelectorAll('.imgHome');
     genderMovie.forEach(movie => movie.addEventListener('click',visitMovie));

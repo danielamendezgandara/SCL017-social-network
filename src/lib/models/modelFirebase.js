@@ -129,24 +129,14 @@ const objErrorMessage = {
   export function observeStatusUser(){
     firebase.auth().onAuthStateChanged((user) => {
        if (user) { 
-         const displayName = user.displayName;
-         const email = user.email;
-         console.log(email);
-         const photoURL = user.photoURL;
-         const emailVerified = user.emailVerified; 
-         const uid = user.uid;
-         console.log(user);
-         //callback('Existe un usuario activo');
-         //console.log(user);
          console.log('Existe un usuario activo');
        } else {
          console.log('No existe un usuario activo');
-         //callback('No existe un usuario activo');
        }
      });
     };
 
-// Sección de Likes
+// Sección de Likes para los comentarios 
 
  export const addLikes = (nameMovie,idComment) => firebase.firestore().collection('post').doc(nameMovie).collection('comments')
 .doc(idComment)
