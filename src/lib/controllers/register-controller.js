@@ -12,6 +12,7 @@ const signUpUserEmailPassword = () =>{
             name : newUser.user.displayName,
             email: newUser.user.email,
             photoURL:'https://img.icons8.com/ios-glyphs/120/000000/user-female.png',
+            movieView :""
         };
         addCollection('users',newUser.user.uid,objUser);
         modalRegister.style.display='none';
@@ -39,6 +40,7 @@ const signUpUserGoogle = () =>{
             name: user.displayName,
             email: user.email,
             photoURL: user.photoURL,
+            movieView : ""
       };
       addCollection('users',user.uid,objUser)
       .then(() => {

@@ -61,5 +61,6 @@ const objErrorMessage = {
   
   export const addComments = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('comments').add(obj);
 
-  export const addInfo = (archive,nameMovie,obj) =>firebase.firestore().collection(archive).doc(nameMovie).collection('infoMovie').add(obj);
-  
+  export const updateDoc = (archive,nameMovie,obj) => firebase.firestore().collection(archive).doc(nameMovie).update(obj);
+
+ 

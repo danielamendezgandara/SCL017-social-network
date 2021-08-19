@@ -1,5 +1,6 @@
 import pelicula from "../../data/pelicula.js";
-import { movieData } from "../controllers/movie-controller.js";
+import { createDataMovie, movieData} from "../controllers/movie-controller.js";
+import { visitMovie } from "../controllers/movie-controller.js";
 
 export default ()=>{
     const homeView=`<div id="home" class="home">
@@ -79,42 +80,50 @@ export default ()=>{
 
     dataMovie.filter(movie => movie.gender === "Terror").forEach(gender=>{
       const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
       viewTerror.appendChild(genderMatch);
       movieData(gender.name,gender);
-      genderMatch.onclick = function () { 
-        window.location.hash = "#movie";
-        }   
     });
     dataMovie.filter(movie => movie.gender === "Acción").forEach(gender=>{
       const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
       viewAccion.appendChild(genderMatch);
       movieData(gender.name,gender);
-      genderMatch.onclick = function () { 
-        window.location.hash = "#movie";
-       }
     });
     dataMovie.filter(movie => movie.gender === "Suspenso").forEach(gender=>{
       const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
       viewSuspenso.appendChild(genderMatch);
       movieData(gender.name,gender);
-      genderMatch.onclick = function () { 
-        window.location.hash = "#movie";
-       }
     });
     dataMovie.filter(movie => movie.gender === "Comedia").forEach(gender=>{
       const genderMatch = document.createElement("div");
-      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}">`;
+      genderMatch.innerHTML = `<img class="imgHome" src="${gender.imgHome}" data-name="${gender.name}">`;
       viewComedia.appendChild(genderMatch);
       movieData(gender.name,gender);
-      genderMatch.onclick = function () { 
-        window.location.hash = "#movie";
-       }
     });
+
+    const genderMovie=homePage.querySelectorAll('.imgHome');
+    genderMovie.forEach(movie => movie.addEventListener('click',visitMovie));
+    createDataMovie();
+
     return homePage;
 }
 
 
+export const funcion=()=>{
 
+
+  var docRef = firebase.firestore().collection("movieData").doc("movie");
+  docRef.get().then((doc) => {
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+}
+ 

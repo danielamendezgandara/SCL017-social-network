@@ -1,5 +1,8 @@
-export const movieView=(movie)=>{
-    const moviePage = `
+
+
+export const viewMovie= (movie)=>{
+    console.log(movie);
+    const moviePage = `<div data-name="${movie.name}">
     <div class="left-test">
      <div class="img">
        <img class="sheetImg" src="${movie.imgPortada}">
@@ -30,6 +33,7 @@ export const movieView=(movie)=>{
      <div class="icon-back">
        <a href="#home"><img class="back" src="img/back.png"/></a>
        <span class="sheetTitle">Volver atrás</span>
+     </div>
      </div>
      `
      const globalMovie=document.createElement('div');
