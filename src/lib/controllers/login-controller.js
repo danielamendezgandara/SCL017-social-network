@@ -1,4 +1,4 @@
-import { errorAuthUser, loginUserWithEmailPassword, signInUserFacebookAccount, signInUserGoogleAccount } from "../models/modelFirebase.js";
+/*import { errorAuthUser, loginUserWithEmailPassword, signInUserFacebookAccount, signInUserGoogleAccount } from "../models/modelFirebase.js";
 
 const signInUserEmailPassword = () =>{
     const email = document.getElementById("email").value;
@@ -50,12 +50,12 @@ const signInUserGoogle = () =>{
         alert('La dirección de correo electrónico ya esta en uso');
       }
     });
-  }
+  }*/
 
 export {signInUserEmailPassword,signInUserGoogle,signInUserFacebook};
 
 
-/*import { errorAuthUser, loginUserWithEmailPassword, signInUserFacebookAccount, signInUserGoogleAccount } from "../models/modelFirebase.js";
+import { errorAuthUser, loginUserWithEmailPassword, signInUserFacebookAccount, signInUserGoogleAccount } from "../models/modelFirebase.js";
 
 const signInUserEmailPassword = () =>{
     const email = document.getElementById("email").value;
@@ -65,7 +65,7 @@ const signInUserEmailPassword = () =>{
         if(userLogin.user.emailVerified !== true){
           message.innerHTML='Valida tu cuenta por favor. Revisa tu correo y regresa a iniciar sesión.';
         }else{
-         window.location.hash='#wall';
+         window.location.hash='#home';
         }
         })
         .catch((error) => {
@@ -80,7 +80,7 @@ const signInUserGoogle = () =>{
     const docRef=firebase.firestore().collection('users').doc(user.uid);
     docRef.get().then((doc) => {
       if (doc.exists) {
-        window.location.hash='#wall';
+        window.location.hash='#home';
       } else {
          alert('Aún no se ha registrado.Por favor diríjase a la sección de registro con cuenta de Google.'); 
       }
@@ -102,7 +102,7 @@ const signInUserGoogle = () =>{
 
   const signInUserFacebook = () =>{
     signInUserFacebookAccount().then((result) => {
-      window.location.hash='#wall';
+     window.location.hash='#home';
     })
     .catch((error) => {
       // Handle Errors here.
@@ -119,4 +119,4 @@ const signInUserGoogle = () =>{
     });
   }
 
-export {signInUserEmailPassword,signInUserGoogle,signInUserFacebook};*/
+export {signInUserEmailPassword,signInUserGoogle,signInUserFacebook};

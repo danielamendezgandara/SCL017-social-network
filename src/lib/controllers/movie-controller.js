@@ -3,7 +3,7 @@ import pelicula from "../../data/pelicula.js";
 
 export const movieData= async (nameMovie,dataObj)=>{
 
-    await addCollection('post',nameMovie,dataObj);
+    await addCollection('postMovie',nameMovie,dataObj);
 }
 
 export const visitMovie = (e) =>{
