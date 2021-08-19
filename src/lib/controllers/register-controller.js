@@ -1,4 +1,4 @@
-import {addCollection, authUserWithEmailPassword, errorAuthUser, sendEmailVerification } from "../models/modelFirebase.js";
+/*import {addCollection, authUserWithEmailPassword, errorAuthUser, sendEmailVerification } from "../models/modelFirebase.js";
 addCollection
 const signUpUserEmailPassword = () =>{
     const email=document.getElementById("mail-creation").value;
@@ -88,11 +88,10 @@ const signUpUserFacebook = () =>{
           alert('La dirección de correo electrónico ya esta en uso');
         }
       });
-}
+}*/
 
 export {signUpUserEmailPassword, signUpUserGoogle,signUpUserFacebook};
 
-/*
 
 import {addCollection, authUserWithEmailPassword, errorAuthUser, sendEmailVerification, signInUserGoogleAccount, userActive } from "../models/modelFirebase.js";
 
@@ -109,6 +108,7 @@ const signUpUserEmailPassword = () =>{
             name : userName,
             email: newUser.user.email,
             photoURL:'https://img.icons8.com/ios-glyphs/120/000000/user-female.png',
+            movieView :""
         };
         addCollection('users',newUser.user.uid,objUser);
         modalRegister.style.display='none';
@@ -127,19 +127,8 @@ const signUpUserEmailPassword = () =>{
         const user=result.user;
         const focusEmail=document.getElementById("email");
         const focusGoogle=document.getElementById("google");
-        //const usermail=result.user.email;
-        //const db=firebase.firestore();
         const docRef=firebase.firestore().collection('users').doc(user.uid);
-        // console.log(result.user);
-        /*db.collection("users").where("email", "==",usermail)
-    .onSnapshot((querySnapshot) => {
-        var cities = [];
-        querySnapshot.forEach((doc) => {
-            cities.push(doc.data().name);
-        });
-        console.log("Current cities in CA: ", cities.join(", "));
-    });*/
-       /* docRef.get().then((doc) => {
+        docRef.get().then((doc) => {
           if (doc.exists) {
               alert("Esta cuenta ya se encuentra registrada ya sea mediante email y contraseña o a través de una cuenta de Google.Inicie sesión con alguna opción ofrecida.");
               focusEmail.focus();
@@ -150,12 +139,11 @@ const signUpUserEmailPassword = () =>{
                 name: user.displayName,
                 email: user.email,
                 photoURL: user.photoURL,
-                like_status: '',
-                notLike_status :'hide'
+                movieView :""
               }
               addCollection('users',user.uid,objUser);
               console.log("No such document!");
-              window.location.hash='#wall';
+              window.location.hash='#home';
           }
       }).catch((error) => {
           console.log("Error getting document:", error);
@@ -179,10 +167,11 @@ const signUpUserFacebook = () =>{
               name: user.displayName,
               email: user.email,
               photoURL: user.photoURL,
+              movieView :""
         };
         addCollection('users',user.uid,objUser)
         .then(() => {
-          window.location.hash = '#wall';
+          window.location.hash = '#home';
         });
       })
       .catch((error) => {
@@ -198,7 +187,7 @@ const signUpUserFacebook = () =>{
           alert('La dirección de correo electrónico ya esta en uso');
         }
       });
-}*/
+}
 
 
-//export {signUpUserEmailPassword,signUpUserGoogle,signUpUserFacebook};*/
+export {signUpUserEmailPassword,signUpUserGoogle,signUpUserFacebook};

@@ -200,3 +200,9 @@ h3{
     width: 5%;
     margin-left: 5%;
 }
+
+.comments-section{
+    width: 45%;
+    float: left;
+    margin: 5%;
+}
