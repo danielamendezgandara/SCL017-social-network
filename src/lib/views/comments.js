@@ -1,4 +1,4 @@
-/*import {deleteCommentUser, editCommentUser, filterStatusLike, likeUser, preventSaveEmptyField,updateCommentUser} from "../controllers/comment-controller.js";
+import {deleteCommentUser, editCommentUser, filterStatusLike, likeUser, preventSaveEmptyField,updateCommentUser} from "../controllers/comment-controller.js";
 
 
 export const allComments = (nameMovie,doc, comment) =>{
@@ -40,7 +40,7 @@ export const allComments = (nameMovie,doc, comment) =>{
             countLike.classList.remove('hide');
             countLike.innerHTML=comment.like_count;
       }*/
-      /*likebutton.addEventListener('click',likeUser)
+      likebutton.addEventListener('click',likeUser)
 
       firebase.auth().onAuthStateChanged((user) => {
             if (user) { 
@@ -75,4 +75,5 @@ export const allComments = (nameMovie,doc, comment) =>{
                  } 
             });
       return commentUser;
-}*/
+}
+
