@@ -52,7 +52,7 @@ const signInUserGoogle = () =>{
     });
   }*/
 
-export {signInUserEmailPassword,signInUserGoogle,signInUserFacebook};
+//export {signInUserEmailPassword,signInUserGoogle,signInUserFacebook};
 
 
 import { errorAuthUser, loginUserWithEmailPassword, signInUserFacebookAccount, signInUserGoogleAccount } from "../models/modelFirebase.js";

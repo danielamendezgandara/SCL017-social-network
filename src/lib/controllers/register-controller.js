@@ -90,7 +90,7 @@ const signUpUserFacebook = () =>{
       });
 }*/
 
-export {signUpUserEmailPassword, signUpUserGoogle,signUpUserFacebook};
+//export {signUpUserEmailPassword, signUpUserGoogle,signUpUserFacebook};
 
 
 import {addCollection, authUserWithEmailPassword, errorAuthUser, sendEmailVerification, signInUserGoogleAccount, userActive } from "../models/modelFirebase.js";

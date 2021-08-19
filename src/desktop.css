@@ -202,7 +202,7 @@ h3{
 }
 
 .comments-section{
-    width: 45%;
-    float: left;
-    margin: 5%;
+    margin-left: 50%;
+    margin: 2%;
+    width: 35%;
 }
