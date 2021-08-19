@@ -1,4 +1,4 @@
-/*import {addComments,deleteComment,updateComment,userActive} from "../models/modelFirebase.js";
+import {addComments,deleteComment,updateComment,userActive} from "../models/modelFirebase.js";
 
 
 export const preventSendCommet=(e)=>{
@@ -68,7 +68,7 @@ export const createComment = async (e)=>{
       .catch((error) => {
         console.error('Error adding document: ', error);
       });*/
-    /*btnShare.style.display='none';
+    btnShare.style.display='none';
     formComments.reset();
 }
 
@@ -120,7 +120,7 @@ export const updateCommentUser = async (e) =>{
     // The document probably doesn't exist.
       console.error('Error updating document: ', error);
     });*/
- /* }
+  }
 };
 
 
@@ -158,7 +158,7 @@ export const likeUser = async (e)=>{
     // The document probably doesn't exist.
       console.error('Error updating document: ', error);
     });*/
-/*}*/
+}
 
 
 /// Mostrar imágenes 
@@ -177,4 +177,4 @@ export const likeUser = async (e)=>{
 <br>
 <img id="img"/>*/
 
-//export const filterStatusLike =(arr, searchKey) =>arr.filter(obj => Object.keys(obj).some(key =>  obj[key] == searchKey));*/
+export const filterStatusLike =(arr, searchKey) =>arr.filter(obj => Object.keys(obj).some(key =>  obj[key] == searchKey));
