@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import { createDataMovie, movieData} from "../controllers/movie-controller.js";
+import {movieData} from "../controllers/movie-controller.js";
 import { visitMovie } from "../controllers/movie-controller.js";
 
 export default ()=>{
@@ -105,25 +105,10 @@ export default ()=>{
 
     const genderMovie=homePage.querySelectorAll('.imgHome');
     genderMovie.forEach(movie => movie.addEventListener('click',visitMovie));
-    createDataMovie();
 
     return homePage;
 }
 
 
-export const funcion=()=>{
 
-
-  var docRef = firebase.firestore().collection("movieData").doc("movie");
-  docRef.get().then((doc) => {
-      if (doc.exists) {
-          console.log("Document data:", doc.data());
-      } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-      }
-  }).catch((error) => {
-      console.log("Error getting document:", error);
-  });
-}
- 
+  

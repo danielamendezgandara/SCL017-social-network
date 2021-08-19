@@ -6,30 +6,6 @@ export const movieData= async (nameMovie,dataObj)=>{
     await addCollection('post',nameMovie,dataObj);
 }
 
-export const createDataMovie = ()=>{
-    const obj={
-        name: "",
-        gender : "",
-        year :"",
-        synopsis:"",
-        imgHome: "",
-        imgPortada : "",
-        youtube :"",
-        spoilers :"",
-        cuevana : "",
-        netflix: "",
-        disney : ""
-     }
-     addCollection('movieData','movie',obj)
-    .then(() => {
-        console.log("Document successfully written!");
-    })
-    .catch((error) => {
-        console.error("Error writing document: ", error);
-    });
-}
-
-
 export const visitMovie = (e) =>{
   const nameMovie=e.currentTarget.dataset.name;
   console.log(nameMovie);
