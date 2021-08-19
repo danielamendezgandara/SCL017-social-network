@@ -554,6 +554,7 @@ h3 {
     margin-left: 5%;
 }
 
+/*Seccción de comentarios 
 /*Class para efectos de botones*/
 .hide{
     display: none;
@@ -580,15 +581,17 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:25em;
-    margin-left: 20%;
+    width:90%;
+    max-width:30rem;
+    margin-left: 4%;
+    margin-top:3%;
     background-color:#333333;
 }
 
 .comments-view{
     display: grid;
     grid-template-columns: 1fr;
-    width:21em;
+    width:70%;
     margin-top: 5%;
 }
 
@@ -599,8 +602,8 @@ h3 {
     height:8em;
 }
 .comment{
-    width:80%;
-    height: 60px;
+    width:85%;
+    height: 65px;
     font-family:'Open Sans', sans-serif;
     font-size: 0.9rem;
     background: #646464;
@@ -639,7 +642,7 @@ h3 {
 .section-comment{
    display: flex;
    flex-direction: column;
-   width:22em;
+   width:80%;
    margin-top: 3%;
    color: #a5a5a5;
    font-family:'Open Sans', sans-serif;
@@ -647,14 +650,14 @@ h3 {
 
 .header-comment{
     display: grid;
-    grid-template-columns:70px 200px auto;
+    grid-template-columns:5rem 10rem auto;
     grid-template-rows:repeat (1,1fr);
 }
 
 .image-user{
     width:60px;
     height: 60px;
-    margin-left:10%;
+    margin-left:1%;
     margin-top:2%;
    }
    .image-user img {
@@ -673,16 +676,16 @@ h3 {
    .section-likes{
      display: grid;
      grid-template-columns: 25% auto;
-     margin-top: 15%;
+     margin-top: 5%;
    }
 
    .count-likes{
     color :seashell;
-    margin-left:0.5em;
+    margin-left: 40px;
 }
 
 .btn-like{
-    margin-left:0.2em;
+    margin-left:30px;
 }
 
 .btn-like i.far.fa-thumbs-up{
@@ -709,13 +712,14 @@ grid-template-columns: auto auto auto auto 35px 35px 35px repeat(7, 1fr);
 grid-template-rows: auto 40px repeat(2, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
- width:20em;
+ width:70%;
  height: auto;
 }
 
 .showComment{
     height: auto;
-    width: 22em;
+    width:22em;
+    margin-top: 3%;
     word-wrap: break-word;
     font-size: 0.9rem;
     grid-area: 1 / 1 / 2 / 8;

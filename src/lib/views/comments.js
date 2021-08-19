@@ -6,18 +6,17 @@ export const allComments = (nameMovie,doc, comment) =>{
       <div class= image-user><img src="${comment.photo_user}"></div>
       <div class= "name-user">${comment.name_user}</div>
       <div class="section-likes">
-      <div class="count-likes">${comment.like_count}</div>
-      <div class="btn-like" id="btn-like-${doc.id}" data-id = "${doc.id}" data-name ="${nameMovie}"><i class="far fa-thumbs-up"></i></div>
+         <div class="count-likes">${comment.like_count}</div>
+         <div class="btn-like" id="btn-like-${doc.id}" data-id = "${doc.id}" data-name ="${nameMovie}"><i class="far fa-thumbs-up"></i></div>
       </div>
-      </div>
-      <div class ="grid-comment">
+     </div>
+   <div class ="grid-comment">
       <div class= "showComment" id="showComment-${doc.id}" contenteditable="false">${comment.message}</div>
       <div class ="date-post" >${comment.date_post}</div>
       <div class="btn-edit"  data-id = "${doc.id}"><i class="far fa-edit"></i></div>
       <div class="btn-save hide"  data-id = "${doc.id}" data-name ="${nameMovie}"><i class="far fa-save  fa-1x"></i></div>
       <div class="btn-delete" id ="btn-delete-${doc.id}" data-id ="${doc.id}" data-name ="${nameMovie}" ><i class="far fa-trash-alt"></i></div>
-      </div>
-      </div>
+   </div>
       `;
       const commentUser=document.createElement('section');
       commentUser.className='section-comment';

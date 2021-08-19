@@ -1,4 +1,5 @@
 import { signOutUser } from "../models/modelFirebase.js";
+
 export const eventSignOut = () => {
    signOutUser()
      .then(() => {
