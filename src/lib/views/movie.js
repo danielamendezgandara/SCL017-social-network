@@ -1,6 +1,3 @@
-/*import { visitMovie } from "../controllers/movie-controller.js";
-import { getDoc } from "../models/modelFirebase.js";*/
-
 import { viewMovie } from "./viewMovie.js";
 
 export default ()=>{
@@ -44,15 +41,5 @@ export default ()=>{
    
 return moviePage; 
  };
-
-
-
-
-
-/* const ui= userActive().uid
-
-  
- 
- }*/
 
    
