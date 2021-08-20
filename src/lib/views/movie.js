@@ -1,3 +1,4 @@
+import { observeStatusUser } from "../models/modelFirebase.js";
 import { viewMovie } from "./viewMovie.js";
 
 export default ()=>{
@@ -42,4 +43,5 @@ return moviePage;
 
  };
 
+ observeStatusUser();
    

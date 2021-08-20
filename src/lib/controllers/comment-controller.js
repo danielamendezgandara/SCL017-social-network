@@ -5,8 +5,8 @@ export const preventSendCommet=(e)=>{
     const event=e.target.value;
     const comment=e.target;
     const btnShare=e.target.parentElement.querySelector('#share-comment');
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user){
+    //firebase.auth().onAuthStateChanged((user) => {
+      if(userActive()){
         if(event !== ""){
           btnShare.classList.remove('hide');
           comment.classList.add('active');
@@ -16,7 +16,7 @@ export const preventSendCommet=(e)=>{
         }
       }
 
-      }); 
+      //}); 
 };
 
 export const preventSaveEmptyField = (e)=>{
@@ -68,13 +68,14 @@ export const createComment = async (e)=>{
       .catch((error) => {
         console.error('Error adding document: ', error);
       });*/
-    btnShare.style.display='none';
+      btnShare.classList.toggle('hide');
     formComments.reset();
 }
 
 export const deleteCommentUser = async (e) =>{
         const name=e.currentTarget.dataset.name;
         const id=e.currentTarget.dataset.id;
+        console.log(name);
         console.log(e.currentTarget.dataset.id);
         await   deleteComment(name,id);
 };
