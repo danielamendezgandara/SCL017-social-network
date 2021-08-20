@@ -67,7 +67,7 @@ export const createComment = async (e)=>{
       .catch((error) => {
         console.error('Error adding document: ', error);
       });*/
-    btnShare.style.display='none';
+    btnShare.style.display='none';         // Cambiar por esto por favor btnShare.classList.toggle('hide');
     formComments.reset();
 }
 
