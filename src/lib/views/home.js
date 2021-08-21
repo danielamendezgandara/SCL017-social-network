@@ -1,5 +1,5 @@
 import pelicula from "../../data/pelicula.js";
-import {createSetMovie, movieData} from "../controllers/movie-controller.js";
+import {addElementsData, assignElementsObj, createSetMovie, movieData} from "../controllers/movie-controller.js";
 import { visitMovie } from "../controllers/movie-controller.js";
 
 export default ()=>{
@@ -77,10 +77,10 @@ export default ()=>{
     const viewSuspenso = homePage.querySelector("#imgSuspenso");
     const viewComedia = homePage.querySelector("#imgComedia");
 
-    createSetMovie(dataMovie,"Terror",viewTerror,movieData);
-    createSetMovie(dataMovie,"Acción",viewAccion,movieData);
-    createSetMovie(dataMovie,"Suspenso",viewSuspenso,movieData);
-    createSetMovie(dataMovie,"Comedia",viewComedia,movieData);
+    createSetMovie(dataMovie,"Terror",viewTerror,addElementsData,assignElementsObj,movieData);
+    createSetMovie(dataMovie,"Acción",viewAccion,addElementsData,assignElementsObj,movieData);
+    createSetMovie(dataMovie,"Suspenso",viewSuspenso,addElementsData,assignElementsObj,movieData);
+    createSetMovie(dataMovie,"Comedia",viewComedia,addElementsData,assignElementsObj,movieData);
 
     const genderMovie=homePage.querySelectorAll('.imgHome');
     genderMovie.forEach(movie => movie.addEventListener('click',visitMovie));
