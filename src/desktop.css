@@ -202,11 +202,17 @@ h3{
 }
 
  /* testeando boton like*/
-   .starContainer>button{
+.starContainer>button{
        background-color:transparent;
        border: none;
        font-size: x-large;       
-   }
-   .fas{
+}
+.fas{
        color:red;
-   }
+}
+/* Estilo para la sección de comentarios*/
+.comments-section{
+    margin-left: 50%;
+    margin: 2%;
+    width: 35%;
+}
