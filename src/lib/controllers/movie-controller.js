@@ -1,4 +1,5 @@
 import {addCollection, updateDoc, userActive} from "../models/modelFirebase.js";
+import { filterStatusLike } from "./comment-controller.js";
 
 //Función que crea una colección con la data de cada película por categoría
 export const movieData= async (nameMovie,dataObj)=>{
@@ -39,9 +40,6 @@ export const createSetMovie = (dataMovie, category,section,callbackNewData,callb
 
 }
 
-
-
-
 // Función que permite extraer el atributo data-name de la imagen de la película clickeada y modificar el objeto del
 // usuario sólo en el elemento movieView, que indica el nombre de la película
 export const visitMovie = (e) =>{
@@ -63,20 +61,72 @@ export const visitMovie = (e) =>{
 
 }
 
-export const rankMovie =async(e)=>{
-  const event=e.target.parentElement;
-  const nameMovie=event.dataset.name;
+export const rankMovie=(e)=>{
   const idStar=e.target.id;
+  const starValue=parseInt(e.target.value);
+  console.log(typeof(parseInt(starValue)));
+  const nameMovie=e.target.parentElement.dataset.name;
   console.log(nameMovie);
-  console.log(e.target.id);
   const useremail=userActive().email;
-  const objRankMovie= {
+  console.log(useremail);
+  const obj={
     email : useremail,
-    starChecked : idStar
+    star : idStar,
+    starValue : starValue 
   }
-  const objUser={
-    usersStar : firebase.firestore.FieldValue.arrayUnion(useremail),
-    likeEmail: firebase.firestore.FieldValue.arrayUnion(objRankMovie)
-  }
-   await updateDoc('postMovie',nameMovie,objUser);
+  
+  firebase.firestore().collection('postMovie').doc(nameMovie)
+  .get().then((doc) => {
+    if (doc.exists) {
+      console.log(doc.data().emailuser);
+      if(!doc.data().emailuser.includes(useremail)){
+        const objStarUser={
+          countStars : firebase.firestore.FieldValue.increment(starValue),
+          emailuser : firebase.firestore.FieldValue.arrayUnion(useremail),
+          starchecked : firebase.firestore.FieldValue.arrayUnion(obj),
+        }
+        updataDoc(nameMovie,objStarUser)
+          .then(() => {
+            console.log('Document successfully updated!'); 
+          })
+          .catch((error) => {
+          // The document probably doesn't exist.
+            console.error('Error updating document: ', error);
+          });
+      }else{
+         console.log("Document data:", doc.data());
+          const objEmailUser =filterStatusLike(doc.data().starchecked,useremail);
+          console.log(objEmailUser[0].starValue);
+          const objS={
+            countStars :  firebase.firestore.FieldValue.increment(-objEmailUser[0].starValue),
+            starchecked : firebase.firestore.FieldValue.arrayRemove(objEmailUser[0])
+          }
+          updataDoc(nameMovie,objS)
+          .then(() => {
+            console.log('Document successfully updated!'); 
+            const objStarUserNew ={
+              countStars : firebase.firestore.FieldValue.increment(starValue),
+              starchecked : firebase.firestore.FieldValue.arrayUnion(obj),
+            }
+            updataDoc(nameMovie,objStarUserNew)
+          .then(() => {
+            console.log('Document successfully updated!'); 
+          })
+          .catch((error) => {
+          // The document probably doesn't exist.
+            console.error('Error updating document: ', error);
+          });
+          })
+          .catch((error) => {
+          // The document probably doesn't exist.
+            console.error('Error updating document: ', error);
+          });
+      }
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
 }
