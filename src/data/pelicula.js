@@ -95,7 +95,7 @@ export default {
       "name": "Black Widow",
       "gender": "Acción",
       "year": "2021",
-      "synopsis": "",
+      "synopsis": "Natasha Romanoff, alias Viuda Negra, se enfrenta a las partes más oscuras de su historia cuando surge una peligrosa conspiración con vínculos con su pasado. Perseguida por una fuerza que no se detendrá ante nada para acabar con ella, Natasha debe enfrentarse a su historia como espía y a las relaciones rotas que dejó a su paso mucho antes de convertirse en una Vengadora.",
       "imgHome": "https://res.cloudinary.com/movietalk/image/upload/v1628787999/Home/blackWidowHome_j2n5dd.jpg",
       "imgPortada": "https://res.cloudinary.com/movietalk/image/upload/v1628181157/Portada/blackWidow_rf6ncm.jpg",
       "youtube":"https://www.youtube.com/watch?v=ybji16u608U",
