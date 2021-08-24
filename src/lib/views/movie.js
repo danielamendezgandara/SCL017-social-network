@@ -9,8 +9,8 @@ export default ()=>{
   firebase.auth().onAuthStateChanged((user) => {
     if (user) { 
       const uid = user.uid;
-      var dor=  firebase.firestore().collection("users").doc(uid);
-      dor.get().then((doc) => {
+      const doc=  firebase.firestore().collection("users").doc(uid);
+      doc.get().then((doc) => {
         if (doc.exists) {
             console.log("Document data:", doc.data());
             console.log(doc.data().movieView);

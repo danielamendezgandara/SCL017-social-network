@@ -1,4 +1,4 @@
-import {addCollection, updateDoc, userActive} from "../models/modelFirebase.js";
+import {addCollection, updataDoc, updateDoc, updateUserData, userActive} from "../models/modelFirebase.js";
 import { filterStatusLike } from "./comment-controller.js";
 
 //Función que crea una colección con la data de cada película por categoría
@@ -11,9 +11,9 @@ export const movieData= async (nameMovie,dataObj)=>{
 export const addElementsData =(data,callback)=>{
   const elementsList={};
   const objRankMovie={
-      usersStar : [],
-      likeEmail:[{email:"",starChecked:""}],
-      start_count:0
+      countStars :0,
+      emailuser :[],
+      starchecked:[]
   }
   callback(elementsList,data);
   const newObj=callback(elementsList,objRankMovie);
@@ -68,11 +68,14 @@ export const rankMovie=(e)=>{
   const nameMovie=e.target.parentElement.dataset.name;
   console.log(nameMovie);
   const useremail=userActive().email;
+  const useruid=userActive().uid;
   console.log(useremail);
   const obj={
     email : useremail,
     star : idStar,
-    starValue : starValue 
+    starValue : starValue ,
+    status : 'starSelect',
+    movie :nameMovie
   }
   
   firebase.firestore().collection('postMovie').doc(nameMovie)
@@ -88,6 +91,10 @@ export const rankMovie=(e)=>{
         updataDoc(nameMovie,objStarUser)
           .then(() => {
             console.log('Document successfully updated!'); 
+            const objStarSelect={
+              starMovie:  firebase.firestore.FieldValue.arrayUnion(obj)
+            }
+            updateUserData(useruid,objStarSelect)
           })
           .catch((error) => {
           // The document probably doesn't exist.
@@ -111,6 +118,20 @@ export const rankMovie=(e)=>{
             updataDoc(nameMovie,objStarUserNew)
           .then(() => {
             console.log('Document successfully updated!'); 
+            
+            firebase.firestore().collection('users').doc(useruid).get()
+            .then((docRef) => {
+              const objUserMovie= filterStatusLike(docRef.data().starMovie,nameMovie)
+              console.log(objUserMovie);
+              /*const objStarSelect={
+                starMovie:  firebase.firestore.FieldValue.arrayRemove(doc.data().starMovie[1])
+              }*/
+              //updateUserData(useruid,objStarSelect)
+            })
+            .catch((error) => {
+            // The document probably doesn't exist.
+              console.error('Error updating document: ', error);
+            });
           })
           .catch((error) => {
           // The document probably doesn't exist.

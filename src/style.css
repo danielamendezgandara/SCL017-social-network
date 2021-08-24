@@ -829,17 +829,10 @@ h3 {
     color: orange;
   }
   
-  /*.miau:checked ~ label {
-    color: orange;
-  }*/
   input[type="radio"]:checked ~ label {
     color: orange;
   }
   
- /*.miau:checked ~ label{
+ .starSelect ~ label{
       color: orange;
   }
-
-  .miar{
-      color: orange;
-  }*/

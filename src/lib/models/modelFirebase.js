@@ -142,3 +142,5 @@ const objErrorMessage = {
  export const addLikes = (nameMovie,idComment) => firebase.firestore().collection('post').doc(nameMovie).collection('comments')
 .doc(idComment)
 .update({like_count : firebase.firestore.FieldValue.increment(1)});
+
+export const updataDoc= (nameMovie,obj) => firebase.firestore().collection('postMovie').doc(nameMovie).update(obj);

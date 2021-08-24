@@ -108,7 +108,9 @@ const signUpUserEmailPassword = () =>{
             name : userName,
             email: newUser.user.email,
             photoURL:'https://img.icons8.com/ios-glyphs/120/000000/user-female.png',
-            movieView :""
+            movieView :"",
+            uid : newUser.user.uid,
+            starMovie :[]
         };
         addCollection('users',newUser.user.uid,objUser);
         modalRegister.style.display='none';
@@ -139,7 +141,9 @@ const signUpUserEmailPassword = () =>{
                 name: user.displayName,
                 email: user.email,
                 photoURL: user.photoURL,
-                movieView :""
+                movieView :"",
+                uid : user.uid,
+                starMovie :[]
               }
               addCollection('users',user.uid,objUser);
               console.log("No such document!");
@@ -167,7 +171,9 @@ const signUpUserFacebook = () =>{
               name: user.displayName,
               email: user.email,
               photoURL: user.photoURL,
-              movieView :""
+              movieView :"",
+              uid : user.uid,
+              starMovie:[]
         };
         addCollection('users',user.uid,objUser)
         .then(() => {

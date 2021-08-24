@@ -1,14 +1,14 @@
 
 import pelicula from "../../data/pelicula.js";
-import { createComment,preventSendCommet } from "../controllers/comment-controller.js";
-import { rankMovie } from "../controllers/movie-controller.js";
-import { getNote} from "../models/modelFirebase.js";
+import { createComment,filterStatusLike,preventSendCommet } from "../controllers/comment-controller.js";
+import {rankMovie } from "../controllers/movie-controller.js";
+import { getNote, updataDoc} from "../models/modelFirebase.js";
 import { allComments } from "./comments.js";
 
+
 export const viewMovie= (name)=>{
-    const nameMovie=name;
-    console.log(nameMovie);
-    const dataMovie = pelicula.pelicula;
+  const nameMovie=name;
+  const dataMovie = pelicula.pelicula;
   const dataFilterMovie= dataMovie.filter(movie => movie.name === nameMovie);
   console.log(dataFilterMovie[0]["name"]);
     const moviePage = `<div data-name="${dataFilterMovie[0]["name"]}">
@@ -20,7 +20,7 @@ export const viewMovie= (name)=>{
        <span class="sheetGender">${dataFilterMovie[0]["gender"]}</span>
        <span class="sheetYear">${dataFilterMovie[0]["year"]}</span>
        <form class="ranking">
-       <p class="clasification" data-name ="${dataFilterMovie[0]["name"]}">
+       <p class="clasification" data-name ="${nameMovie}">
          <input class="radio" id="radio1" type="radio" name="estrellas" value="5"><!--
          --><label for="radio1"><i class="fas fa-star"></i></label><!--
          --><input class="radio" id="radio2" type="radio"  name="estrellas" value="4"><!--
@@ -33,6 +33,7 @@ export const viewMovie= (name)=>{
          --><label for="radio5"><i class="fas fa-star"></i></label>
        </p>
      </form>
+     <p class="mean-stars"></p>
      </div>
      <div class="syn">
        <p class="sheetTitle">Sinopsis</p>
@@ -68,15 +69,52 @@ export const viewMovie= (name)=>{
      globalMovie.innerHTML=moviePage;
      const showComments=globalMovie.querySelector('#comments-view');
      const comment = globalMovie.querySelector('#comment');
-     const ranking=globalMovie.querySelectorAll('input[type="radio"]');
-    // console.log(ranking);
-
-    // ranking.forEach(star =>star.classList.add('miar'));
-
+     const meanStars=globalMovie.querySelector('.mean-stars');
+     const starRanking=globalMovie.querySelectorAll('.radio');
+     
      firebase.auth().onAuthStateChanged((user) => {
       if (user) { 
         comment.disabled=false;
-        
+        const email=user.email;
+          firebase.firestore().collection('postMovie').doc(nameMovie).get()
+          .then((doc) => {
+            if (doc.exists) {
+              console.log(doc.data());
+              if(doc.data().emailuser.length!==0){
+                 const mean= doc.data().countStars/doc.data().emailuser.length;
+                 meanStars.innerHTML=`${mean.toFixed(2)}` + '/5';
+                 console.log(mean);
+                 const meanStarsUsers={
+                   meanStars : mean
+                 }
+                 updataDoc(nameMovie,meanStarsUsers)
+                 .then(() => {
+                  console.log('Document successfully updated!'); 
+                })
+                .catch((error) => {
+                // The document probably doesn't exist.
+                  console.error('Error updating document: ', error);
+                });
+                // meanStars.innerHTML=`${mean}`;
+              }
+              if(doc.data().emailuser.length!== 0 & doc.data().emailuser.includes(email)){
+                const objStatusStar= filterStatusLike(doc.data().starchecked,email);
+                const idStar=objStatusStar[0].star;
+                const styleStar=objStatusStar[0].status;
+                console.log(objStatusStar[0].star);
+                starRanking.forEach(star=>{
+                  if(star.id!==idStar){
+                    star.classList.add(styleStar);
+                  }else{
+                    star.classList.add(styleStar);
+                  } 
+                });
+              }   
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+      
       } else {
         comment.disabled=true;
       }
@@ -92,6 +130,12 @@ export const viewMovie= (name)=>{
     const formComment=globalMovie.querySelector('#form-comments');
     comment.addEventListener('input',preventSendCommet);
     formComment.addEventListener('submit',createComment);
-    ranking.forEach(star =>star.addEventListener('click',rankMovie));
+    starRanking.forEach(star=>star.addEventListener('click',rankMovie));
+    /*starOne.addEventListener('click',rankMovie);
+    starTwo.addEventListener('click',rankMovie);
+    starThree.addEventListener('click',rankMovie);
+    starFour.addEventListener('click',rankMovie);
+    starFive.addEventListener('click',rankMovie);*/
+
      return globalMovie;
 }
