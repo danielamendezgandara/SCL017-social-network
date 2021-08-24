@@ -61,13 +61,7 @@ export const createComment = async (e)=>{
     like_count : 0
     };
     await addComments('post',nameMovie,data)
-    /*.then((docRef) => {
-        console.log('Document written with ID: ', docRef);
-      })
-      .catch((error) => {
-        console.error('Error adding document: ', error);
-      });*/
-    btnShare.style.display='none';         // Cambiar por esto por favor btnShare.classList.toggle('hide');
+    btnShare.classList.toggle('hide');
     formComments.reset();
 }
 
@@ -112,13 +106,6 @@ export const updateCommentUser = async (e) =>{
     buttonEdit.classList.remove('hide');
     const obj = { message : contentComment};
    await updateComment(nameMovie, idComment, obj)
-    /*.then(() => {
-      console.log('Document successfully updated!');
-    })
-    .catch((error) => {
-    // The document probably doesn't exist.
-      console.error('Error updating document: ', error);
-    });*/
   }
 };
 
@@ -150,30 +137,5 @@ export const likeUser = async (e)=>{
     } 
   }
   await updateComment(nameMovie, idComment, objUser)
-    /*.then(() => {
-      console.log('Document successfully updated!'); 
-    })
-    .catch((error) => {
-    // The document probably doesn't exist.
-      console.error('Error updating document: ', error);
-    });*/
 }
-
-
-/// Mostrar imágenes 
-
-/*function mostrar(){
-  var archivo = document.getElementById("file").files[0];
-  var reader = new FileReader();
-  if (file) {
-    reader.readAsDataURL(archivo );
-    reader.onloadend = function () {
-      document.getElementById("img").src = reader.result;
-    }
-  }
-}
-<input type="file" id="file" accept="image/*" onchange="mostrar()"/>
-<br>
-<img id="img"/>*/
-
 export const filterStatusLike =(arr, searchKey) =>arr.filter(obj => Object.keys(obj).some(key =>  obj[key] == searchKey));

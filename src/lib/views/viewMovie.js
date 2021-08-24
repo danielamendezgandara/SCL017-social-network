@@ -37,9 +37,9 @@ export const viewMovie = async (nameMovie) => {
        <img class="sheetImg" src="${dataFilterMovie[0]["imgPortada"]}">
      </div>
      <div class="info">
+       <div class="starContainer">
        <span class="sheetGender">${dataFilterMovie[0]["gender"]}</span>
-       <span class="sheetYear">${dataFilterMovie[0]["year"]}</span>
-       <div class="starContainer">       
+       <span class="sheetYear">${dataFilterMovie[0]["year"]}</span>       
        <button id="starCount" class="${dynClass}"</button>
        <p>${starMovie}</p>
        </div>
@@ -63,7 +63,7 @@ export const viewMovie = async (nameMovie) => {
        <section class="comments-section" data-name="${dataFilterMovie[0]["name"]}">
                      <articule class="comments-view" id="comments-view"></articule>
                  <form  class="form-comments" id="form-comments">
-                      <textarea id="comment" cols="50" rows="5" class="comment" placeholder="Añade un comentario"></textarea>
+                      <textarea id="comment" cols="50" rows="5" class="comment" placeholder="   Añade un comentario"></textarea>
                       <button class="share-comment hide" id="share-comment">Compartir</button>
                  </form>
       </section>
