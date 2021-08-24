@@ -21,22 +21,15 @@ export const createSetMovie = (dataMovie, category,section,callback) =>{
 
 // Función que permite extraer el atributo data-name de la imagen de la película clickeada y modificar el objeto del
 // usuario sólo en el elemento movieView, que indica el nombre de la película
-export const visitMovie = (e) =>{
+export const visitMovie = async(e) =>{
 
   const nameMovie=e.currentTarget.dataset.name;
   const useruid=userActive().uid;
   const obj={
     movieView : nameMovie
   }
-  updateDoc('users',useruid,obj)
-  .then(() => {
-      alert('Document successfully updated!');
-    })
-  .catch((error) => {
-    // The document probably doesn't exist.
-      alert('Error updating document: ', error);
-    });
-    window.location.hash="#movie";
+  await updateDoc('users',useruid,obj)
+  window.location.hash="#movie";
 
 }
 
