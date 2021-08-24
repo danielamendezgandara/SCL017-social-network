@@ -18,26 +18,12 @@ export default ()=>{
             console.log("Document data:", doc.data());
             console.log(doc.data().movieView);
             sheetContainer.appendChild(await viewMovie(doc.data().movieView));
-            /*var docRef = firebase.firestore().collection("post").doc(doc.data().movieView);
-  docRef.get().then((doc) => {
-      if (doc.exists) {
-          sheetContainer.innerHTML="";
-          console.log("Document data:", doc.data());
-          sheetContainer.appendChild(viewMovie(doc.data()))
-      } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
-      }
-  }).catch((error) => {
-      console.log("Error getting document:", error);
-  });*/
         } else {
             // doc.data() will be undefined in this case
-            console.log("No such document!");
+            alert("Document no exist");
         }
     }).catch((error) => {
-        console.log("Error getting document:", error);
-    
+        alert("Error getting document:", error);
     });
 
     }
