@@ -30,11 +30,11 @@ export const visitMovie = (e) =>{
   }
   updateDoc('users',useruid,obj)
   .then(() => {
-      console.log('Document successfully updated!');
+      alert('Document successfully updated!');
     })
   .catch((error) => {
     // The document probably doesn't exist.
-      console.error('Error updating document: ', error);
+      alert('Error updating document: ', error);
     });
     window.location.hash="#movie";
 
