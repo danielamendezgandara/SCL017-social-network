@@ -204,10 +204,8 @@ h3{
 .starContainer>button {
     background-color:transparent;
     border: none;
-    font-size: x-large;       
-}
-.fas{
-    color:yellow;
+    font-size: x-large;  
+    color:yellow;     
 }
 /* Estilo para la sección de comentarios*/
 .comments-section {

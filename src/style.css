@@ -275,13 +275,11 @@ h3 {
     margin-left: 5%;
 }
 /*  testeando boton like */
-.starContainer>button{
+.starContainer>button {
     background-color:transparent;
     border: none;
-    font-size:large;       
-}
-.fas{
-    color:yellow;
+    font-size: x-large;  
+    color:yellow;     
 }
 /*Fuente de letra y estilos para la sección comentarios*/ 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');

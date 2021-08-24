@@ -2,35 +2,28 @@ import pelicula from "../../data/pelicula.js";
 import { createComment, preventSendCommet } from "../controllers/comment-controller.js";
 import { getNote } from "../models/modelFirebase.js";
 import { allComments } from "./comments.js";
-import movie from "./movie.js";
+import { likeController } from "../controllers/like-controller.js";
 const db = firebase.firestore();
 
-export const viewMovie = async (name) => {
-  const nameMovie = name;
-  // console.log(nameMovie);
+export const viewMovie = async (nameMovie) => {
   const dataMovie = pelicula.pelicula;
   const userUID = firebase.auth().currentUser.uid;
-  // console.log("uid "+firebase.auth().currentUser.uid);
   let starMovie;
   let dynClass;
   let likedMovies;
 
+  ///// Recuperando datos del firebase para contadores de like
   try {
     const movieSnapshot = await db.collection("movies").doc(nameMovie).get();
-    
-    starMovie = movieSnapshot.data()?.likes;     
-
+    starMovie = movieSnapshot.data()?.likes;
     starMovie = starMovie ? starMovie : 0;
-
     const snapshot = await db.collection("likes/" + userUID + "/movies").get();
     likedMovies = snapshot.docs.map(doc => doc.id);
 
   } catch (e) {
     console.log(e);
   }
-
-   
-
+  ///// Seteando la clase del botón
   if (likedMovies.includes(nameMovie)) {
     dynClass = "fas fa-star";
   } else {
@@ -38,7 +31,6 @@ export const viewMovie = async (name) => {
   }
 
   const dataFilterMovie = dataMovie.filter(movie => movie.name === nameMovie);
-  // console.log(dataFilterMovie[0]["name"]);
   const moviePage = `<div data-name="${dataFilterMovie[0]["name"]}">
     <div class="left-test">
      <div class="img">
@@ -81,12 +73,13 @@ export const viewMovie = async (name) => {
        <span class="sheetTitle">Volver atrás</span>
      </div>
      </div>
-     `
+     `;
   const globalMovie = document.createElement('div');
   globalMovie.innerHTML = moviePage;
   const showComments = globalMovie.querySelector('#comments-view');
   const comment = globalMovie.querySelector('#comment');
 
+  ///// Sección de comentarios
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       comment.disabled = false;
@@ -98,82 +91,16 @@ export const viewMovie = async (name) => {
     showComments.innerHTML = '';
 
     querySnapshot.forEach(doc => {
-      // console.log(doc.data());
       showComments.appendChild(allComments(nameMovie, doc, doc.data()));
     })
   });
 
+  ///// Lista de eventos
   const formComment = globalMovie.querySelector('#form-comments');
   comment.addEventListener('input', preventSendCommet);
   formComment.addEventListener('submit', createComment);
-  // console.log(globalMovie);
-
-  // listener click like
-  const btnStar = globalMovie.querySelector("#starCount");
-
-  btnStar.addEventListener("click", (event) => {
-    
-    console.log(starMovie);
-    if (likedMovies.includes(nameMovie)) {
-      dynClass = "fas fa-star";
-      starMovie--;
-      likedMovies = likedMovies.filter(name => name != nameMovie);
-      console.log("user unlikes");
-
-
-      db.collection("movies")
-        .doc(nameMovie)
-        .set({
-          likes: starMovie,
-        })
-        .then(
-          console.log(likedMovies + "," + starMovie)
-        )
-        .catch(function (error) {
-          console.error("Error ", error);
-        });
-
-      db.collection("likes/" + userUID + "/movies").doc(nameMovie).delete()
-
-        .then(
-          console.log(likedMovies + "," + starMovie)
-        )
-        .catch(function (error) {
-          console.error("Error ", error);
-        });
-
-
-    } else {
-      dynClass = "far fa-star";
-      starMovie++;
-      likedMovies.push(nameMovie);
-      console.log("user likes");
-
-      db.collection("movies")
-        .doc(nameMovie)
-        .set({
-          likes: starMovie,
-        })
-        .then(
-          console.log(likedMovies, starMovie)
-        )
-        .catch(function (error) {
-          console.error("Error ", error);
-        });
-
-      db.collection("likes/" + userUID + "/movies").doc(nameMovie).set({})
-
-        .then(
-          console.log(likedMovies + "," + starMovie)
-        )
-        .catch(function (error) {
-          console.error("Error ", error);
-        });
-    }
-    history.replaceState({},"","/home");
-    window.location.hash = "#movie";
-  });
-
+  globalMovie.querySelector("#starCount").addEventListener("click",
+    function () { likeController(likedMovies, nameMovie, dynClass, starMovie, userUID) });
 
 
   return globalMovie;
