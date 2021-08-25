@@ -1,13 +1,8 @@
-//Modificación de la vista home: Se añade dos funciones, movieData que se encarga de actualizar la data de los
-// documentos en la database de firebase para usarlo más adelante .La función visitMovie se encarga de capturar
-//el dataset.name de la película clickeada
+import pelicula from '../../data/pelicula.js';
+import { createSetMovie, movieData, visitMovie } from '../controllers/movie-controller.js';
 
-import pelicula from "../../data/pelicula.js";
-import {createSetMovie, movieData} from "../controllers/movie-controller.js";
-import { visitMovie } from "../controllers/movie-controller.js";
-
-export default ()=>{
-    const homeView=`<div id="home" class="home">
+export default () => {
+  const homeView = `<div id="home" class="home">
     <div class="one"><img class="img-logo2" src="img/logo.png"></div>
     <div class ="two">
       <section class="carousel">
@@ -72,26 +67,22 @@ export default ()=>{
   </nav>
     </div>`;
 
-    const homePage=document.createElement('div');
-    homePage.innerHTML=homeView;
+  const homePage = document.createElement('div');
+  homePage.innerHTML = homeView;
 
-    const dataMovie = pelicula.pelicula;
-    const viewTerror = homePage.querySelector("#imgTerror");
-    const viewAccion = homePage.querySelector("#imgAccion");
-    const viewSuspenso = homePage.querySelector("#imgSuspenso");
-    const viewComedia = homePage.querySelector("#imgComedia");
+  const dataMovie = pelicula.pelicula;
+  const viewTerror = homePage.querySelector('#imgTerror');
+  const viewAccion = homePage.querySelector('#imgAccion');
+  const viewSuspenso = homePage.querySelector('#imgSuspenso');
+  const viewComedia = homePage.querySelector('#imgComedia');
 
-    createSetMovie(dataMovie,"Terror",viewTerror,movieData);
-    createSetMovie(dataMovie,"Acción",viewAccion,movieData);
-    createSetMovie(dataMovie,"Suspenso",viewSuspenso,movieData);
-    createSetMovie(dataMovie,"Comedia",viewComedia,movieData);
+  createSetMovie(dataMovie, 'Terror', viewTerror, movieData);
+  createSetMovie(dataMovie, 'Acción', viewAccion, movieData);
+  createSetMovie(dataMovie, 'Suspenso', viewSuspenso, movieData);
+  createSetMovie(dataMovie, 'Comedia', viewComedia, movieData);
 
-    const genderMovie=homePage.querySelectorAll('.imgHome');
-    genderMovie.forEach(movie => movie.addEventListener('click',visitMovie));
+  const genderMovie = homePage.querySelectorAll('.imgHome');
+  genderMovie.forEach((movie) => movie.addEventListener('click', visitMovie));
 
-    return homePage;
-}
-
-
-
-  
+  return homePage;
+};
