@@ -16,7 +16,7 @@ export const viewMovie = async (nameMovie) => {
   // Recuperando datos del firebase para contadores de like 
   try {
     const movieSnapshot = await db.collection('movies').doc(nameMovie).get();
-    starMovie = movieSnapshot.data().likes;
+    starMovie = movieSnapshot.data()?.likes;
     starMovie = starMovie ? starMovie : 0;
     const snapshot = await db.collection('likes/' + userUID + '/movies').get();
     likedMovies = snapshot.docs.map((doc) => doc.id);
