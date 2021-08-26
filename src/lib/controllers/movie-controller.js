@@ -5,8 +5,8 @@ import {
 } from '../models/modelFirebase.js';
 
 /* Función que crea una colección con la data de cada película por categoría */
-export const movieData = async (nameMovie, dataObj) => {
-  await addCollection('postMovie', nameMovie, dataObj);
+export const movieData = (nameMovie, dataObj) => {
+  addCollection('postMovie', nameMovie, dataObj);
 };
 /* Función que permite filtrar la data de una película e insertarla en la vista home */
 export const createSetMovie = (dataMovie, category, section, callback) => {
@@ -20,12 +20,12 @@ export const createSetMovie = (dataMovie, category, section, callback) => {
 /* Función que permite extraer el atributo data-name de la imagen de la película clickeada */
 /* y modificar el objeto del */
 /* usuario sólo en el elemento movieView, que indica el nombre de la película */
-export const visitMovie = async (e) => {
+export const visitMovie = (e) => {
   const nameMovie = e.currentTarget.dataset.name;
   const useruid = userActive().uid;
   const obj = {
     movieView: nameMovie,
   };
-  await updateDoc('users', useruid, obj);
+  updateDoc('users', useruid, obj);
   window.location.hash = '#movie';
 };
