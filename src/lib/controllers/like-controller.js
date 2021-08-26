@@ -1,62 +1,47 @@
 const db = firebase.firestore();
 
 export function likeController(likedMovies, nameMovie, dynClass, starMovie, userUID) {
+  if (likedMovies.includes(nameMovie)) {
+    dynClass = 'fas fa-star';
+    starMovie--;
+    likedMovies = likedMovies.filter((name) => name !== nameMovie);
 
-    if (likedMovies.includes(nameMovie)) {
-        dynClass = "fas fa-star";
-        starMovie--;
-        likedMovies = likedMovies.filter(name => name != nameMovie);
+    db.collection('movies')
+      .doc(nameMovie)
+      .set({
+        likes: starMovie,
+      })
+      .then()
+      .catch(function (error) {
+        console.log('Error', error);
+      });
 
-        db.collection("movies")
-            .doc(nameMovie)
-            .set({
-                likes: starMovie,
-            })
-            .then(
+    db.collection('likes/' + userUID + '/movies').doc(nameMovie).delete()
+      .then()
+      .catch(function (error) {
+        console.log('Error', error);
+      });
+  } else {
+    dynClass = 'far fa-star';
+    starMovie++;
+    likedMovies.push(nameMovie);
+    db.collection('movies')
+      .doc(nameMovie)
+      .set({
+        likes: starMovie,
+      })
+      .then()
+      .catch(function (error) {
+        console.log('Error', error);
+      });
 
-            )
-            .catch(function (error) {
-                console.error("Error ", error);
-            });
+    db.collection('likes/' + userUID + '/movies').doc(nameMovie).set({})
 
-        db.collection("likes/" + userUID + "/movies").doc(nameMovie).delete()
-
-            .then(
-
-            )
-            .catch(function (error) {
-                console.error("Error ", error);
-            });
-
-
-    } else {
-        dynClass = "far fa-star";
-        starMovie++;
-        likedMovies.push(nameMovie);
-
-
-        db.collection("movies")
-            .doc(nameMovie)
-            .set({
-                likes: starMovie,
-            })
-            .then(
-
-            )
-            .catch(function (error) {
-                console.error("Error ", error);
-            });
-
-        db.collection("likes/" + userUID + "/movies").doc(nameMovie).set({})
-
-            .then(
-
-            )
-            .catch(function (error) {
-                console.error("Error ", error);
-            });
-    }
-    history.replaceState({}, "", "/home");
-    window.location.hash = "#movie";
-
+      .then()
+      .catch(function (error) {
+        console.log('Error', error);
+      });
+  }
+  window.history.replaceState({}, '', '/home');
+  window.location.hash = '#movie';
 }
