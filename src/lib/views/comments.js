@@ -33,8 +33,7 @@ export const allComments = (nameMovie,doc, comment) =>{
       const likebutton=commentUser.querySelector(`#btn-like-${doc.id}`);
       const likeButtons=commentUser.querySelectorAll('.btn-like');
       const countLikes=commentUser.querySelectorAll('.count-likes');
-
-      likebutton.addEventListener('click',likeUser)
+      likebutton.addEventListener('click',likeUser);
 
       firebase.auth().onAuthStateChanged((user) => {
             if (user) { 

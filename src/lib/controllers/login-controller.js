@@ -30,18 +30,13 @@ const signInUserGoogle = () =>{
          alert('Aún no se ha registrado.Por favor diríjase a la sección de registro con cuenta de Google.'); 
       }
   }).catch((error) => {
-      console.log("Error getting document:", error);
+      alert("Error getting document:", error);
   });
 
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    const credential = error.credential;
-    alert("Error detectado al usar la cuenta de Google");
+    alert("Error detectado al usar la cuenta de Google :"+ errorCode);
   });
   }
 
@@ -52,12 +47,6 @@ const signInUserGoogle = () =>{
     .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
-      console.log(errorCode);
       if (errorCode === 'auth/account-exists-with-different-credential') {
         alert('La dirección de correo electrónico ya está en uso.');
       }
