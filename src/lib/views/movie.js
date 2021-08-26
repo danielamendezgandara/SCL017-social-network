@@ -14,7 +14,7 @@ export default () => {
           sheetContainer.appendChild(await viewMovie(doc.data().movieView));
         } else {
           alert('Document no exist');
-        } 
+        }
       }).catch((error) => {
         alert('Error getting document:', error);
       });

@@ -4,9 +4,10 @@ import { getNote } from '../models/modelFirebase.js';
 import { allComments } from './comments.js';
 import { likeController } from '../controllers/like-controller.js';
 
-const db = firebase.firestore();
+
 
 export const viewMovie = async (nameMovie) => {
+  const db = firebase.firestore();
   const dataMovie = pelicula.pelicula;
   const userUID = firebase.auth().currentUser.uid;
   let starMovie;

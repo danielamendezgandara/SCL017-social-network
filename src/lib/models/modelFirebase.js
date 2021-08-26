@@ -61,7 +61,7 @@ export const updateComment = (nameMovie, idComment, obj) => firebase.firestore()
   .doc(idComment)
   .update(obj);
 /* Observador para mostrar el estado del usuario (activo/inactivo) */
-export function observeStatusUser() {
+/* export function observeStatusUser() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log('Existe un usuario activo');
@@ -69,7 +69,7 @@ export function observeStatusUser() {
       console.log('No existe un usuario activo');
     }
   });
-}
+} */
 /* Sección de Likes para los comentarios */
 export const addLikes = (nameMovie, idComment) => firebase.firestore().collection('post').doc(nameMovie).collection('comments')
   .doc(idComment)

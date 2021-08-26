@@ -1,4 +1,5 @@
 export const changeRoute = (route) => {
   const hash = route.replace(/#/g, '');
-  window.history.replaceState({}, hash, '/' + hash);
+  const ref = ['/', hash].join('');
+  window.history.replaceState({}, hash, ref);
 };

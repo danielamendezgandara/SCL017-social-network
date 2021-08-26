@@ -71,13 +71,11 @@ export const createComment = async (e) => {
 export const deleteCommentUser = async (e) => {
   const name = e.currentTarget.dataset.name;
   const id = e.currentTarget.dataset.id;
-  console.log(e.currentTarget.dataset.id);
   await deleteComment(name, id);
 };
 
 export const editCommentUser = (e) => {
   const sectionComment = e.currentTarget.parentElement;
-  console.log(sectionComment);
   const buttonSave = sectionComment.querySelector('.btn-save');
   const buttonEdit = sectionComment.querySelector('.btn-edit');
   const buttonDelete = sectionComment.querySelector('.btn-delete');
@@ -92,9 +90,7 @@ export const editCommentUser = (e) => {
 export const updateCommentUser = async (e) => {
   const nameMovie = e.currentTarget.dataset.name;
   const idComment = e.currentTarget.dataset.id;
-  console.log(nameMovie, idComment);
   const sectionComment = e.currentTarget.parentNode;
-  console.log(sectionComment);
   const editableComment = sectionComment.querySelector('.showComment');
   const contentComment = editableComment.innerHTML;
   const buttonSave = sectionComment.querySelector('.btn-save');
@@ -116,7 +112,6 @@ export const updateCommentUser = async (e) => {
 
 export const likeUser = async (e) => {
   const sectionLikes = e.currentTarget.parentElement;
-  console.log(sectionLikes);
   const like = sectionLikes.querySelector('.btn-like');
   const nameMovie = like.dataset.name;
   const idComment = like.dataset.id;
@@ -126,7 +121,6 @@ export const likeUser = async (e) => {
     like_status: 'showLikes',
   };
   let objUser = {};
-  console.log(useremail);
   if (!like.classList.contains('showLikes')) {
     objUser = {
       usersLike: firebase.firestore.FieldValue.arrayUnion(useremail),
@@ -143,5 +137,5 @@ export const likeUser = async (e) => {
   await updateComment(nameMovie, idComment, objUser);
 };
 
-export const filterStatusLike = (arr, searchKey) => arr.filter(obj => Object.keys(obj)
+export const filterStatusLike = (arr, searchKey) => arr.filter((obj) => Object.keys(obj)
   .some((key) => obj[key] === searchKey));
