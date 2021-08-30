@@ -2,7 +2,7 @@
 // documentos en la database de firebase para usarlo más adelante .La función visitMovie se encarga de capturar
 //el dataset.name de la película clickeada
 
-import pelicula from "../../data/pelicula.js";
+import pelicula from "../data/pelicula.js";
 import {createSetMovie, movieData} from "../controllers/movie-controller.js";
 import { visitMovie } from "../controllers/movie-controller.js";
 
