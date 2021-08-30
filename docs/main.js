@@ -5,7 +5,7 @@ import { hrefContent, routes } from "./views/components.js";
 const container = document.getElementById("root");
 
 const pathname = window.location.pathname;
-container.innerHTML= routes[pathname];
+container.innerHTML = routes[pathname];
 
 window.addEventListener("hashchange", () => {
   const link = window.location.hash;
@@ -13,7 +13,7 @@ window.addEventListener("hashchange", () => {
 
   changeRoute(link);
   container.innerHTML = "";
-  container.innerHTML=hrefContent[link];
+  container.innerHTML = hrefContent[link];
 });
 
 window.addEventListener("popstate", () => {
@@ -21,6 +21,6 @@ window.addEventListener("popstate", () => {
   console.log("path name change", pathname);
 
   container.innerHTML = "";
-  container.innerHTML=routes[window.location.pathname];
+  container.innerHTML = routes[window.location.pathname];
 });
 
