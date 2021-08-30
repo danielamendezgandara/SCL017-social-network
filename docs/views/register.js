@@ -1,7 +1,7 @@
 import {signInUserEmailPassword, signInUserFacebook, signInUserGoogle } from "../controllers/login-controller.js";
 import {signUpUserEmailPassword, signUpUserGoogle} from "../controllers/register-controller.js";
 
-export default()=>{
+export const register = () => {
   const registerView = `
   <div id="login">
   <div class="logo">
