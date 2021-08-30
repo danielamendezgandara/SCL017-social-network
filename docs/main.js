@@ -5,7 +5,7 @@ import { hrefContent, routes } from "./views/components.js";
 const container = document.getElementById("root");
 
 const pathname = window.location.pathname;
-container.appendChild(routes[pathname]);
+container.appendChild(routes[pathname]());
 
 window.addEventListener("hashchange", () => {
   const link = window.location.hash;
@@ -21,6 +21,6 @@ window.addEventListener("popstate", () => {
   console.log("path name change", pathname);
 
   container.innerHTML = "";
-  container.appendChild(routes[window.location.pathname]);
+  container.appendChild(routes[window.location.pathname]());
 });
 
