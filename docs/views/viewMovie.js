@@ -1,4 +1,4 @@
-import pelicula from "../../data/pelicula.js";
+import pelicula from "../data/pelicula.js";
 import { createComment, preventSendCommet } from "../controllers/comment-controller.js";
 import { getNote } from "../models/modelFirebase.js";
 import { allComments } from "./comments.js";
